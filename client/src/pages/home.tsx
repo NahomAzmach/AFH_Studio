@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, AlertCircle, Clock, Phone } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
-import afhImage from "@assets/AFH3_1757374349753.jpg";
+import teamImage from "@assets/Team_1757374829738.jpeg";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
@@ -124,8 +124,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img 
-                src={afhImage} 
-                alt="Caregiver providing compassionate care to resident" 
+                src={teamImage} 
+                alt="AFH Web Studio team - experts in adult family home websites" 
                 className="rounded-xl shadow-xl w-full" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
@@ -137,19 +137,30 @@ export default function Home() {
       {/* Trust Indicators */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Built for AFHs</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { icon: "📱", title: "Mobile‑ready" },
-              { icon: "⚡", title: "Fast & lightweight" },
-              { icon: "🎯", title: "Friendly support" },
-              { icon: "🛡️", title: "No PHI collection" }
-            ].map((item, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-4xl mb-2">{item.icon}</div>
-                <p className="font-semibold">{item.title}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8">Built for AFHs</h2>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { icon: "📱", title: "Mobile‑ready" },
+                  { icon: "⚡", title: "Fast & lightweight" },
+                  { icon: "🎯", title: "Friendly support" },
+                  { icon: "🛡️", title: "No PHI collection" }
+                ].map((item, index) => (
+                  <div key={index} className="space-y-2 text-center">
+                    <div className="text-4xl mb-2">{item.icon}</div>
+                    <p className="font-semibold">{item.title}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                alt="Professional adult family home environment" 
+                className="rounded-xl shadow-xl w-full" 
+              />
+            </div>
           </div>
         </div>
       </section>

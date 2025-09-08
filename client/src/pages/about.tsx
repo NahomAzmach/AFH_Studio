@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Eye, Heart, Zap, Shield } from "lucide-react";
-import profileImage from "@assets/nahom1_1757369752711.jpg";
+import { Eye, Heart, Zap, Shield, Linkedin, ExternalLink } from "lucide-react";
+import profileImage from "@assets/ME_1757374829730.jpeg";
+import afhImage from "@assets/AFH1_1757374349744.jpg";
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
               src={profileImage}
               alt="Nahom - AFH Web Studio Founder"
               className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg"
-              style={{ objectPosition: 'top' }}
+              style={{ objectPosition: 'center' }}
             />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Hi, I'm Nahom
@@ -24,7 +25,7 @@ export default function About() {
             challenges of finding the right families, building trust, and
             managing all the moving parts of running a care home.
           </p>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-6">
             As a recent Computer Science graduate from Western Washington
             University (with minors in Biology and Chemistry), I'm heading to
             the University of Washington for my Master's degree in AI/Machine
@@ -32,6 +33,18 @@ export default function About() {
             experience, gives me a unique perspective on what your website
             really needs to succeed.
           </p>
+          <div className="flex justify-center">
+            <a 
+              href="https://www.linkedin.com/in/nahom-azmach/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              <Linkedin className="w-5 h-5" />
+              <span className="font-semibold">Connect on LinkedIn</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
         {/* Process Section */}
@@ -81,8 +94,8 @@ export default function About() {
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Caring support in adult family home"
+              src={afhImage}
+              alt="Caring support in adult family home - therapy animals and compassionate care"
               className="rounded-xl shadow-xl w-full"
             />
           </div>
