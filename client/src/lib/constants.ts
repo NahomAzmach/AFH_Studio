@@ -1,9 +1,15 @@
+import everbloomThumb from "@assets/afh_everbloom_1757375636779.png";
+import cedarGroveThumb from "@assets/afh_cedarGrove_1757375636778.png";
+import mapleStoneThumb from "@assets/afh_maple&stone_1757375636781.png";
+import sunriseOrchardThumb from "@assets/afh_SunriseOrchard_1757375636782.png";
+import bluebirdHavenThumb from "@assets/afh_bluebird_1757375636774.png";
+
 export const TEMPLATES = [
   {
     id: "everbloom",
     name: "Everbloom Care",
     description: "Warm, welcoming design with clear services and tour prompts.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    image: everbloomThumb,
     previewUrl: "https://everbloomcare.replit.app",
     featured: true
   },
@@ -11,32 +17,33 @@ export const TEMPLATES = [
     id: "cedar-grove",
     name: "Cedar Grove Living",
     description: "Immersive storytelling design with parallax scrolling and nature themes.",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: cedarGroveThumb,
     previewUrl: "/templates/cedar-grove"
   },
   {
     id: "maple-stone",
     name: "Maple & Stone",
     description: "Classic newspaper-style layout with professional credibility and trust.",
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: mapleStoneThumb,
     previewUrl: "/templates/maple-stone"
   },
   {
     id: "sunrise-orchard",
     name: "Sunrise Orchard",
     description: "Instagram-style social layout showcasing community life and activities.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: sunriseOrchardThumb,
     previewUrl: "/templates/sunrise-orchard"
   },
   {
     id: "bluebird-haven",
     name: "Bluebird Haven",
     description: "Elegant, sophisticated design with emphasis on luxury care.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    image: bluebirdHavenThumb,
     previewUrl: "/templates/bluebird-haven",
     featured: true
   }
 ];
+
 
 export const PRICING_PLANS = [
   {

@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye, Heart, Zap, Shield, Linkedin, ExternalLink } from "lucide-react";
-import profileImage from "@assets/ME_1757374829730.jpeg";
+import profileImage from "@assets/nahom1_1757369752711.jpg";
+import processImage from "@assets/ME_1757374829730.jpeg";
 import afhImage from "@assets/AFH1_1757374349744.jpg";
 
 export default function About() {
@@ -13,7 +14,7 @@ export default function About() {
               src={profileImage}
               alt="Nahom - AFH Web Studio Founder"
               className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg"
-              style={{ objectPosition: 'center' }}
+              style={{ objectPosition: 'top' }}
             />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Hi, I'm Nahom
@@ -94,8 +95,8 @@ export default function About() {
           </div>
           <div>
             <img
-              src={afhImage}
-              alt="Caring support in adult family home - therapy animals and compassionate care"
+              src={processImage}
+              alt="Nahom - Web development expert and AFH website specialist"
               className="rounded-xl shadow-xl w-full"
             />
           </div>
