@@ -5,7 +5,14 @@ import { TEMPLATES } from "@/lib/constants";
 
 export default function Templates() {
   const openPreview = (url: string, templateName: string) => {
-    if (url === "https://everbloomcare.replit.app") {
+    // Handle internal template routes
+    if (url.startsWith("/templates/")) {
+      const fullUrl = window.location.origin + url;
+      const event = new CustomEvent("openPreview", {
+        detail: { url: fullUrl, templateName }
+      });
+      document.dispatchEvent(event);
+    } else if (url === "https://everbloomcare.replit.app") {
       const event = new CustomEvent("openPreview", {
         detail: { url, templateName }
       });
