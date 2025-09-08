@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Shield, Award, Users, Heart, Star, Mail, Calendar } from "lucide-react";
+import afh2Image from "@assets/AFH2_1757374349746.jpg";
+import afh4Image from "@assets/AFH4_1757374349759.jpg";
+import afh6Image from "@assets/AFH6_1757374349764.jpg";
 
 export default function MapleStoneTemplate() {
   return (
@@ -54,8 +57,8 @@ export default function MapleStoneTemplate() {
                 <span className="font-bold text-sm tracking-wide">HEADLINE STORY</span>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=400"
-                alt="Maple & Stone facility"
+                src={afh2Image}
+                alt="Professional care and personal attention at Maple & Stone"
                 className="w-full h-64 object-cover"
               />
               <div className="p-8">
@@ -86,8 +89,8 @@ export default function MapleStoneTemplate() {
                   <span className="font-bold text-sm">PHOTO FEATURE</span>
                 </div>
                 <img 
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300"
-                  alt="Residents in activities"
+                  src={afh4Image}
+                  alt="Residents enjoying community activities"
                   className="w-full h-40 object-cover"
                 />
                 <CardContent className="p-4">

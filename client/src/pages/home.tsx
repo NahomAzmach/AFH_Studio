@@ -3,17 +3,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, AlertCircle, Clock, Phone } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
+import afhImage from "@assets/AFH3_1757374349753.jpg";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
-    if (url === "https://everbloomcare.replit.app") {
-      // Open real demo
+    // Handle internal template routes
+    if (url.startsWith("/templates/")) {
+      const fullUrl = window.location.origin + url;
+      const event = new CustomEvent("openPreview", {
+        detail: { url: fullUrl, templateName }
+      });
+      document.dispatchEvent(event);
+    } else if (url === "https://everbloomcare.replit.app") {
       const event = new CustomEvent("openPreview", {
         detail: { url, templateName }
       });
       document.dispatchEvent(event);
     } else {
-      // Show placeholder message for other demos
       alert("This demo will be available soon! Please contact us to see more examples.");
     }
   };
@@ -118,8 +124,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img 
-                src="https://pixabay.com/get/g4d3f66a880997535b8d4baad44c34bf629cdef521e38f642a17de6b7037236cd8727923789619d2bac65d323e045ac980d1d396b2abf7c5ce1747931e86b1203_1280.jpg" 
-                alt="Modern adult family home exterior" 
+                src={afhImage} 
+                alt="Caregiver providing compassionate care to resident" 
                 className="rounded-xl shadow-xl w-full" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>

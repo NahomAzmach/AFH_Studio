@@ -8,26 +8,32 @@ export default function About() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="flex flex-col items-center mb-8">
-            <img 
+            <img
               src={profileImage}
               alt="Nahom - AFH Web Studio Founder"
               className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg"
+              style={{ objectPosition: 'top' }}
             />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Hi, I'm Nahom</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Hi, I'm Nahom
+            </h1>
           </div>
           <p className="text-xl text-muted-foreground mb-6">
-            I understand Adult Family Homes because they're part of my family's story. My relatives 
-            own and operate AFHs, so I've seen firsthand the challenges of finding the right families, 
-            building trust, and managing all the moving parts of running a care home.
+            I understand Adult Family Homes because they're part of my family's
+            story. My relatives own and operate AFHs, so I've seen firsthand the
+            challenges of finding the right families, building trust, and
+            managing all the moving parts of running a care home.
           </p>
           <p className="text-lg text-muted-foreground">
-            As a recent Computer Science graduate from Western Washington University (with minors in 
-            Biology and Chemistry), I'm heading to the University of Washington for my Master's degree. 
-            This technical foundation, combined with my family's AFH experience, gives me a unique 
-            perspective on what your website really needs to succeed.
+            As a recent Computer Science graduate from Western Washington
+            University (with minors in Biology and Chemistry), I'm heading to
+            the University of Washington for my Master's degree in AI/Machine
+            Learning. This technical foundation, combined with my family's AFH
+            experience, gives me a unique perspective on what your website
+            really needs to succeed.
           </p>
         </div>
-        
+
         {/* Process Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
@@ -37,23 +43,27 @@ export default function About() {
                 {
                   step: "1",
                   title: "Pick Your Template",
-                  description: "Choose from our AFH-specific designs or let us recommend the best fit."
+                  description:
+                    "Choose from our AFH-specific designs or let us recommend the best fit.",
                 },
                 {
-                  step: "2", 
+                  step: "2",
                   title: "Customize Everything",
-                  description: "We tailor colors, photos, and copy to match your home's personality and services."
+                  description:
+                    "We tailor colors, photos, and copy to match your home's personality and services.",
                 },
                 {
                   step: "3",
-                  title: "QA & Launch", 
-                  description: "Thorough testing across devices before going live with your approval."
+                  title: "QA & Launch",
+                  description:
+                    "Thorough testing across devices before going live with your approval.",
                 },
                 {
                   step: "4",
                   title: "Ongoing Care",
-                  description: "Regular updates, monitoring, and support to keep your site running smoothly."
-                }
+                  description:
+                    "Regular updates, monitoring, and support to keep your site running smoothly.",
+                },
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 font-bold">
@@ -61,21 +71,23 @@ export default function About() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                    <p className="text-muted-foreground text-sm">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
               alt="Caring support in adult family home"
               className="rounded-xl shadow-xl w-full"
             />
           </div>
         </div>
-        
+
         {/* Values Section */}
         <Card className="p-8">
           <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
@@ -85,33 +97,37 @@ export default function About() {
                 icon: Eye,
                 title: "Clarity",
                 description: "Every element serves a purpose",
-                color: "primary"
+                color: "primary",
               },
               {
                 icon: Heart,
-                title: "Empathy", 
+                title: "Empathy",
                 description: "Understanding family concerns",
-                color: "secondary"
+                color: "secondary",
               },
               {
                 icon: Zap,
                 title: "Speed",
-                description: "Fast launch and quick updates", 
-                color: "accent"
+                description: "Fast launch and quick updates",
+                color: "accent",
               },
               {
                 icon: Shield,
                 title: "Reliability",
                 description: "Always there when you need us",
-                color: "primary"
-              }
+                color: "primary",
+              },
             ].map((value, index) => (
               <div key={index}>
-                <div className={`w-12 h-12 bg-${value.color}/10 text-${value.color} rounded-lg flex items-center justify-center mx-auto mb-3`}>
+                <div
+                  className={`w-12 h-12 bg-${value.color}/10 text-${value.color} rounded-lg flex items-center justify-center mx-auto mb-3`}
+                >
                   <value.icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -119,15 +135,20 @@ export default function About() {
 
         {/* Why AFH Specific */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Why I Focus on Adult Family Homes</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Why I Focus on Adult Family Homes
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Personal Experience</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Personal Experience
+                </h3>
                 <p className="text-muted-foreground mb-4">
-                  Growing up around my family's AFH operations, I've witnessed the daily challenges: 
-                  managing state regulations, building trust with worried families, and communicating 
-                  the warmth and professionalism that makes a good care home special.
+                  Growing up around my family's AFH operations, I've witnessed
+                  the daily challenges: managing state regulations, building
+                  trust with worried families, and communicating the warmth and
+                  professionalism that makes a good care home special.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>• Understanding family concerns and decision process</li>
@@ -139,11 +160,14 @@ export default function About() {
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Technical Expertise</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Technical Expertise
+                </h3>
                 <p className="text-muted-foreground mb-4">
-                  My Computer Science background, combined with studies in Biology and Chemistry, 
-                  gives me a unique perspective on healthcare technology and the importance of 
-                  clear, trustworthy communication.
+                  My Computer Science background, combined with studies in
+                  Biology and Chemistry, gives me a unique perspective on
+                  healthcare technology and the importance of clear, trustworthy
+                  communication.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>• Healthcare-focused web development</li>
@@ -160,9 +184,10 @@ export default function About() {
         <div className="mt-16 bg-muted rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">My Mission</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Having seen the impact of quality AFH care on families through my own relatives' work, 
-            I want to help more families discover and connect with the right care homes. A professional 
-            website shouldn't be a barrier—it should be a bridge that helps families find the 
+            Having seen the impact of quality AFH care on families through my
+            own relatives' work, I want to help more families discover and
+            connect with the right care homes. A professional website shouldn't
+            be a barrier—it should be a bridge that helps families find the
             compassionate care their loved ones deserve.
           </p>
         </div>

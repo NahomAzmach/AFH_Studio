@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Heart, TreePine, Leaf, Mountain, ArrowDown } from "lucide-react";
+import afh1Image from "@assets/AFH1_1757374349744.jpg";
+import afh2Image from "@assets/AFH2_1757374349746.jpg";
+import afh4Image from "@assets/AFH4_1757374349759.jpg";
 
 export default function CedarGroveTemplate() {
   return (
@@ -72,8 +75,8 @@ export default function CedarGroveTemplate() {
             </div>
             <div className="story-image-float">
               <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Founders planting trees"
+                src={afh1Image}
+                alt="Caring moments with residents and therapy animals"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
               />
             </div>
@@ -87,8 +90,8 @@ export default function CedarGroveTemplate() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="story-image-float order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Garden therapy session"
+                src={afh2Image}
+                alt="Professional caregiver providing personalized attention"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
               />
             </div>

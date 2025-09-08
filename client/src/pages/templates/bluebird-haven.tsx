@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Crown, Diamond, Sparkles, Wine, Utensils, Flower, Car, Shield, Star } from "lucide-react";
+import afh2Image from "@assets/AFH2_1757374349746.jpg";
+import afh3Image from "@assets/AFH3_1757374349753.jpg";
+import afh6Image from "@assets/AFH6_1757374349764.jpg";
 
 export default function BluebirdHavenTemplate() {
   return (
@@ -92,8 +95,8 @@ export default function BluebirdHavenTemplate() {
               <div className="absolute -inset-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 rounded-3xl blur-2xl opacity-30 animate-pulse-slow"></div>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Elegant luxury senior living interior"
+                  src={afh2Image}
+                  alt="Elegant personalized care at Bluebird Haven"
                   className="rounded-3xl shadow-3xl w-full transform hover:scale-105 transition-transform duration-700"
                 />
                 
@@ -245,13 +248,13 @@ export default function BluebirdHavenTemplate() {
             <div className="luxury-image-grid">
               <div className="grid grid-cols-2 gap-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500"
-                  alt="Luxury living room"
+                  src={afh6Image}
+                  alt="Comfortable luxury social spaces"
                   className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-700 col-span-2"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
-                  alt="Elegant dining area"
+                  src={afh3Image}
+                  alt="Personalized dining experience"
                   className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-700"
                 />
                 <img 

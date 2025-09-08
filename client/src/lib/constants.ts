@@ -10,22 +10,22 @@ export const TEMPLATES = [
   {
     id: "cedar-grove",
     name: "Cedar Grove Living",
-    description: "Nature‑forward layout with large hero and services icons.",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    description: "Immersive storytelling design with parallax scrolling and nature themes.",
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/cedar-grove"
   },
   {
     id: "maple-stone",
     name: "Maple & Stone",
-    description: "Classic, trustworthy design with detailed amenities section.",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    description: "Classic newspaper-style layout with professional credibility and trust.",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/maple-stone"
   },
   {
     id: "sunrise-orchard",
     name: "Sunrise Orchard",
-    description: "Bright, cheerful theme focusing on activities and community.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    description: "Instagram-style social layout showcasing community life and activities.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/sunrise-orchard"
   },
   {
