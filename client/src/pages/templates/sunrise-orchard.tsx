@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Heart, Sun, Camera, Music, Coffee, Users, Activity, Smile } from "lucide-react";
+import afhImage1 from "@assets/AFH1_1757372940863.jpg";
+import afhImage3 from "@assets/AFH3_1757372940875.jpg";
+import afhImage4 from "@assets/AFH4_1757372940877.jpg";
+import afhImage5 from "@assets/AFH5_1757372940879.jpg";
+import afhImage6 from "@assets/AFH6_1757372940884.jpg";
 
 export default function SunriseOrchardTemplate() {
   return (
@@ -35,9 +40,9 @@ export default function SunriseOrchardTemplate() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                    alt="Sunrise Orchard profile"
-                    className="w-32 h-32 rounded-full border-4 border-gradient-to-r from-orange-400 to-pink-400 shadow-xl"
+                    src={afhImage5}
+                    alt="Sunrise Orchard community life"
+                    className="w-32 h-32 rounded-full border-4 border-gradient-to-r from-orange-400 to-pink-400 shadow-xl object-cover"
                   />
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
                 </div>
@@ -106,8 +111,8 @@ export default function SunriseOrchardTemplate() {
             {/* Post 1 - Large */}
             <div className="md:col-span-2 md:row-span-2 relative group cursor-pointer overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800"
-                alt="Morning exercise class"
+                src={afhImage4}
+                alt="Residents enjoying games and activities together"
                 className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -124,8 +129,8 @@ export default function SunriseOrchardTemplate() {
             {/* Post 2 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Art therapy session"
+                src={afhImage1}
+                alt="Pet therapy and care activities"
                 className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -141,8 +146,8 @@ export default function SunriseOrchardTemplate() {
             {/* Post 3 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Music therapy"
+                src={afhImage3}
+                alt="Personal care and assistance"
                 className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -158,8 +163,8 @@ export default function SunriseOrchardTemplate() {
             {/* Post 4 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Garden time"
+                src={afhImage6}
+                alt="Community dining and social time"
                 className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -175,8 +180,8 @@ export default function SunriseOrchardTemplate() {
             {/* Post 5 - Video Style */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1609139003551-ee40f5f73ec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Community dinner"
+                src={afhImage5}
+                alt="Happy community gatherings"
                 className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute top-2 right-2">

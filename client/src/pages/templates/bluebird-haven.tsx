@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Crown, Diamond, Sparkles, Wine, Utensils, Flower, Car, Shield, Star } from "lucide-react";
+import afhImage1 from "@assets/AFH1_1757372940863.jpg";
+import afhImage2 from "@assets/AFH2_1757372940873.jpg";
+import afhImage6 from "@assets/AFH6_1757372940884.jpg";
 
 export default function BluebirdHavenTemplate() {
   return (
@@ -92,8 +95,8 @@ export default function BluebirdHavenTemplate() {
               <div className="absolute -inset-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 rounded-3xl blur-2xl opacity-30 animate-pulse-slow"></div>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Elegant luxury senior living interior"
+                  src={afhImage1}
+                  alt="Luxury adult family home with therapy dog and personal care"
                   className="rounded-3xl shadow-3xl w-full transform hover:scale-105 transition-transform duration-700"
                 />
                 
@@ -245,18 +248,18 @@ export default function BluebirdHavenTemplate() {
             <div className="luxury-image-grid">
               <div className="grid grid-cols-2 gap-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500"
-                  alt="Luxury living room"
+                  src={afhImage2}
+                  alt="Elegant private suites with personal care"
                   className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-700 col-span-2"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
-                  alt="Elegant dining area"
+                  src={afhImage6}
+                  alt="Premium dining experience with personal attention"
                   className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-700"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1600566753051-f43c1ec87da8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
-                  alt="Luxury bedroom"
+                  src={afhImage1}
+                  alt="Luxury private room with therapy services"
                   className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-700"
                 />
               </div>

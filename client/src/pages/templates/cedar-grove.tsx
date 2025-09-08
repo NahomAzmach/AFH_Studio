@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Heart, TreePine, Leaf, Mountain, ArrowDown } from "lucide-react";
+import afhImage2 from "@assets/AFH2_1757372940873.jpg";
+import afhImage3 from "@assets/AFH3_1757372940875.jpg";
+import afhImage5 from "@assets/AFH5_1757372940879.jpg";
 
 export default function CedarGroveTemplate() {
   return (
@@ -25,7 +28,7 @@ export default function CedarGroveTemplate() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+backgroundImage: `url(${afhImage2})`
           }}
         ></div>
         
@@ -46,7 +49,7 @@ export default function CedarGroveTemplate() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1574786527010-ce7b6a5e3e7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+backgroundImage: `url(${afhImage3})`
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -72,8 +75,8 @@ export default function CedarGroveTemplate() {
             </div>
             <div className="story-image-float">
               <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Founders planting trees"
+                src={afhImage2}
+                alt="Caring staff providing personalized attention"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
               />
             </div>
@@ -87,8 +90,8 @@ export default function CedarGroveTemplate() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="story-image-float order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Garden therapy session"
+                src={afhImage3}
+                alt="Residents enjoying community activities"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
               />
             </div>
@@ -174,7 +177,7 @@ export default function CedarGroveTemplate() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-40"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+backgroundImage: `url(${afhImage5})`
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
