@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, AlertCircle, Clock, Phone } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
-import afhImage6 from "@assets/AFH6_1757372940884.jpg";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
@@ -119,8 +118,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img 
-                src={afhImage6} 
-                alt="Adult family home caregiver with resident in welcoming environment" 
+                src="https://pixabay.com/get/g4d3f66a880997535b8d4baad44c34bf629cdef521e38f642a17de6b7037236cd8727923789619d2bac65d323e045ac980d1d396b2abf7c5ce1747931e86b1203_1280.jpg" 
+                alt="Modern adult family home exterior" 
                 className="rounded-xl shadow-xl w-full" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>

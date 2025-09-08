@@ -1,16 +1,9 @@
-import afhImage1 from "@assets/AFH1_1757372940863.jpg";
-import afhImage2 from "@assets/AFH2_1757372940873.jpg";
-import afhImage3 from "@assets/AFH3_1757372940875.jpg";
-import afhImage4 from "@assets/AFH4_1757372940877.jpg";
-import afhImage5 from "@assets/AFH5_1757372940879.jpg";
-import afhImage6 from "@assets/AFH6_1757372940884.jpg";
-
 export const TEMPLATES = [
   {
     id: "everbloom",
     name: "Everbloom Care",
     description: "Warm, welcoming design with clear services and tour prompts.",
-    image: afhImage3,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     previewUrl: "https://everbloomcare.replit.app",
     featured: true
   },
@@ -18,28 +11,28 @@ export const TEMPLATES = [
     id: "cedar-grove",
     name: "Cedar Grove Living",
     description: "Nature‑forward layout with large hero and services icons.",
-    image: afhImage2,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/cedar-grove"
   },
   {
     id: "maple-stone",
     name: "Maple & Stone",
     description: "Classic, trustworthy design with detailed amenities section.",
-    image: afhImage6,
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/maple-stone"
   },
   {
     id: "sunrise-orchard",
     name: "Sunrise Orchard",
     description: "Bright, cheerful theme focusing on activities and community.",
-    image: afhImage4,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/sunrise-orchard"
   },
   {
     id: "bluebird-haven",
     name: "Bluebird Haven",
     description: "Elegant, sophisticated design with emphasis on luxury care.",
-    image: afhImage1,
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     previewUrl: "/templates/bluebird-haven",
     featured: true
   }
