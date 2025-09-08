@@ -12,28 +12,28 @@ export const TEMPLATES = [
     name: "Cedar Grove Living",
     description: "Nature‑forward layout with large hero and services icons.",
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    previewUrl: "https://example-cedar-grove.demo"
+    previewUrl: "/templates/cedar-grove"
   },
   {
     id: "maple-stone",
     name: "Maple & Stone",
     description: "Classic, trustworthy design with detailed amenities section.",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    previewUrl: "https://example-maple-stone.demo"
+    previewUrl: "/templates/maple-stone"
   },
   {
     id: "sunrise-orchard",
     name: "Sunrise Orchard",
     description: "Bright, cheerful theme focusing on activities and community.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    previewUrl: "https://example-sunrise-orchard.demo"
+    previewUrl: "/templates/sunrise-orchard"
   },
   {
     id: "bluebird-haven",
     name: "Bluebird Haven",
     description: "Elegant, sophisticated design with emphasis on luxury care.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    previewUrl: "https://example-bluebird-haven.demo"
+    previewUrl: "/templates/bluebird-haven"
   }
 ];
 
