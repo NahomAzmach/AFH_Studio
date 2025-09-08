@@ -1,16 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye, Heart, Zap, Shield } from "lucide-react";
+import profileImage from "@assets/nahom1_1757369752711.jpg";
 
 export default function About() {
   return (
     <div className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Built by Someone Who Understands</h1>
-          <p className="text-xl text-muted-foreground">
-            As a web developer who has worked with healthcare providers, I understand the unique 
-            challenges Adult Family Homes face in attracting the right families while maintaining 
-            compliance and trust.
+          <div className="flex flex-col items-center mb-8">
+            <img 
+              src={profileImage}
+              alt="Nahom - AFH Web Studio Founder"
+              className="w-32 h-32 rounded-full object-cover mb-6 shadow-lg"
+            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Hi, I'm Nahom</h1>
+          </div>
+          <p className="text-xl text-muted-foreground mb-6">
+            I understand Adult Family Homes because they're part of my family's story. My relatives 
+            own and operate AFHs, so I've seen firsthand the challenges of finding the right families, 
+            building trust, and managing all the moving parts of running a care home.
+          </p>
+          <p className="text-lg text-muted-foreground">
+            As a recent Computer Science graduate from Western Washington University (with minors in 
+            Biology and Chemistry), I'm heading to the University of Washington for my Master's degree. 
+            This technical foundation, combined with my family's AFH experience, gives me a unique 
+            perspective on what your website really needs to succeed.
           </p>
         </div>
         
@@ -105,35 +119,37 @@ export default function About() {
 
         {/* Why AFH Specific */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Adult Family Home Focused?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why I Focus on Adult Family Homes</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Industry Understanding</h3>
+                <h3 className="text-xl font-semibold mb-4">Personal Experience</h3>
                 <p className="text-muted-foreground mb-4">
-                  Having worked with healthcare providers, I understand the unique regulations, 
-                  privacy requirements, and family concerns that AFHs navigate daily.
+                  Growing up around my family's AFH operations, I've witnessed the daily challenges: 
+                  managing state regulations, building trust with worried families, and communicating 
+                  the warmth and professionalism that makes a good care home special.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• HIPAA compliance considerations</li>
-                  <li>• State licensing requirements</li>
-                  <li>• Family decision-making process</li>
-                  <li>• Trust and safety messaging</li>
+                  <li>• Understanding family concerns and decision process</li>
+                  <li>• Knowledge of state licensing and compliance</li>
+                  <li>• Insight into operational challenges</li>
+                  <li>• Appreciation for the care and dedication required</li>
                 </ul>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Specialized Features</h3>
+                <h3 className="text-xl font-semibold mb-4">Technical Expertise</h3>
                 <p className="text-muted-foreground mb-4">
-                  Every template and feature is designed with AFH-specific needs in mind, 
-                  from service descriptions to tour booking flows.
+                  My Computer Science background, combined with studies in Biology and Chemistry, 
+                  gives me a unique perspective on healthcare technology and the importance of 
+                  clear, trustworthy communication.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Care service highlighting</li>
-                  <li>• Tour scheduling integration</li>
-                  <li>• Family-friendly messaging</li>
-                  <li>• Local SEO optimization</li>
+                  <li>• Healthcare-focused web development</li>
+                  <li>• Privacy and compliance considerations</li>
+                  <li>• User experience for sensitive decisions</li>
+                  <li>• Local SEO for care providers</li>
                 </ul>
               </CardContent>
             </Card>
@@ -144,9 +160,10 @@ export default function About() {
         <div className="mt-16 bg-muted rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">My Mission</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            To help Adult Family Homes build trust with families through clear, professional websites 
-            that showcase the quality care they provide. Every family deserves to easily find and 
-            connect with the right care for their loved ones.
+            Having seen the impact of quality AFH care on families through my own relatives' work, 
+            I want to help more families discover and connect with the right care homes. A professional 
+            website shouldn't be a barrier—it should be a bridge that helps families find the 
+            compassionate care their loved ones deserve.
           </p>
         </div>
       </div>
