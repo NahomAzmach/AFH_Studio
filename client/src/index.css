@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 40%, 98%);
+  --foreground: hsl(215, 25%, 27%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 25%, 27%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 25%, 27%);
+  --primary: hsl(158, 64%, 25%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(43, 96%, 56%);
+  --secondary-foreground: hsl(215, 25%, 27%);
+  --muted: hsl(215, 20%, 95%);
+  --muted-foreground: hsl(215, 25%, 45%);
+  --accent: hsl(217, 91%, 60%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 20%, 89%);
+  --input: hsl(215, 20%, 89%);
+  --ring: hsl(158, 64%, 25%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(215, 28%, 9%);
+  --foreground: hsl(213, 31%, 91%);
+  --card: hsl(215, 28%, 12%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --popover: hsl(215, 28%, 12%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --primary: hsl(158, 64%, 35%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(43, 96%, 46%);
+  --secondary-foreground: hsl(215, 25%, 27%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(217, 91%, 70%);
+  --accent-foreground: hsl(215, 28%, 9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 28%, 18%);
+  --input: hsl(215, 28%, 18%);
+  --ring: hsl(158, 64%, 35%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .preview-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: var(--radius);
+  }
+
+  .preview-frame.mobile {
+    width: 375px;
+    margin: 0 auto;
+  }
+}
