@@ -1,435 +1,309 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Clock, Shield, Award, Users, Heart, Star, CheckCircle } from "lucide-react";
+import { Phone, MapPin, Clock, Shield, Award, Users, Heart, Star, Mail, Calendar } from "lucide-react";
 
 export default function MapleStoneTemplate() {
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-stone-900">
-      {/* Header */}
-      <header className="bg-white dark:bg-stone-800 shadow-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center">
-                <Award className="w-6 h-6 text-amber-600" />
+    <div className="min-h-screen bg-stone-50 dark:bg-stone-900 font-serif">
+      {/* Classic Newspaper Header */}
+      <header className="bg-white dark:bg-stone-800 border-b-4 border-amber-600 shadow-sm">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center border-b-2 border-amber-600 pb-4 mb-4">
+            <div className="flex items-center justify-center space-x-4 mb-2">
+              <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded border-2 border-amber-600 flex items-center justify-center">
+                <Award className="w-8 h-8 text-amber-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-stone-800 dark:text-stone-100">Maple & Stone</h1>
-                <p className="text-sm text-stone-600 dark:text-stone-400">Adult Family Home</p>
+                <h1 className="text-4xl md:text-5xl font-bold text-stone-800 dark:text-stone-100 tracking-wide">
+                  THE MAPLE & STONE
+                </h1>
+                <p className="text-amber-600 font-semibold tracking-widest text-sm">EST. 1995 • TRUSTED CARE • FAMILY OWNED</p>
               </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#home" className="text-stone-700 dark:text-stone-300 hover:text-amber-600 font-medium transition-colors">Home</a>
-              <a href="#about" className="text-stone-700 dark:text-stone-300 hover:text-amber-600 font-medium transition-colors">About</a>
-              <a href="#services" className="text-stone-700 dark:text-stone-300 hover:text-amber-600 font-medium transition-colors">Services</a>
-              <a href="#amenities" className="text-stone-700 dark:text-stone-300 hover:text-amber-600 font-medium transition-colors">Amenities</a>
-              <a href="#contact" className="text-stone-700 dark:text-stone-300 hover:text-amber-600 font-medium transition-colors">Contact</a>
-            </nav>
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white font-semibold">
-              <Phone className="w-4 h-4 mr-2" />
-              Call (555) 789-0123
+          </div>
+          
+          <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-semibold">
+            <span className="text-stone-600 dark:text-stone-400">📞 (555) 789-0123</span>
+            <span className="text-stone-600 dark:text-stone-400">📍 Heritage Heights, WA</span>
+            <span className="text-stone-600 dark:text-stone-400">🕐 Tours Daily 9-6</span>
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white font-bold">
+              SCHEDULE VISIT TODAY
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="py-16 bg-gradient-to-br from-amber-50 via-stone-50 to-amber-50 dark:from-stone-800 dark:via-stone-900 dark:to-amber-950">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8 fade-in-scale">
-              <div className="inline-flex items-center bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Shield className="w-4 h-4 mr-2" />
-                Licensed & Trusted Since 1995
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-stone-800 dark:text-stone-100 mb-6">
-                A Legacy of 
-                <span className="text-amber-600 block">Trusted Care</span>
-              </h2>
-              <p className="text-xl text-stone-600 dark:text-stone-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                For nearly three decades, Maple & Stone has provided exceptional adult family home 
-                care with the warmth of family and the professionalism you deserve. Our experienced 
-                team creates a safe, nurturing environment where residents thrive.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[
-                { number: "28+", label: "Years of Excellence" },
-                { number: "500+", label: "Families Served" },
-                { number: "24/7", label: "Professional Care" }
-              ].map((stat, index) => (
-                <div key={index} className="bg-white dark:bg-stone-800 p-6 rounded-xl shadow-sm counter-animate" style={{animationDelay: `${index * 200}ms`}}>
-                  <div className="text-3xl font-bold text-amber-600 mb-2">{stat.number}</div>
-                  <div className="text-stone-600 dark:text-stone-400 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 text-lg">
-                Schedule a Personal Tour
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-stone-300 dark:border-stone-600 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 font-semibold px-8 py-4 text-lg">
-                Call: (555) 789-0123
-              </Button>
-            </div>
-          </div>
+      {/* Breaking News Banner */}
+      <div className="bg-amber-600 text-white py-2 overflow-hidden">
+        <div className="flex animate-scroll whitespace-nowrap">
+          <span className="mx-8 font-bold">🏆 BREAKING: Maple & Stone Celebrates 28 Years of Excellence</span>
+          <span className="mx-8">⭐ Recently Featured: "Best Adult Family Home" - Local Times</span>
+          <span className="mx-8">📢 Now Accepting: Tour Appointments for 2024</span>
+          <span className="mx-8 font-bold">🏆 BREAKING: Maple & Stone Celebrates 28 Years of Excellence</span>
         </div>
-      </section>
+      </div>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white dark:bg-stone-800">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <div className="flex items-center mb-6">
-                <div className="w-3 h-12 bg-amber-600 rounded-full mr-4"></div>
-                <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100">Our Story</h3>
+      <div className="container mx-auto px-4 py-8">
+        {/* Main News Layout */}
+        <div className="grid lg:grid-cols-4 gap-8">
+          
+          {/* Left Column - Main Story */}
+          <div className="lg:col-span-3">
+            <article className="bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg overflow-hidden shadow-lg mb-8">
+              <div className="bg-amber-600 text-white p-2 text-center">
+                <span className="font-bold text-sm tracking-wide">HEADLINE STORY</span>
               </div>
-              <p className="text-lg text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">
-                Founded in 1995 by the Johnson family, Maple & Stone began with a simple mission: 
-                to provide the kind of care we would want for our own family members. What started 
-                as a single home has grown into a trusted name in adult family care.
-              </p>
-              <p className="text-lg text-stone-600 dark:text-stone-300 mb-8 leading-relaxed">
-                Our approach combines traditional values with modern care practices, ensuring each 
-                resident receives personalized attention in a warm, home-like environment.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { icon: Shield, title: "State Licensed", subtitle: "Fully certified & inspected" },
-                  { icon: Award, title: "Family Owned", subtitle: "Three generations of care" },
-                  { icon: Users, title: "Experienced Staff", subtitle: "Average 10+ years experience" },
-                  { icon: Heart, title: "Personalized Care", subtitle: "Tailored to each resident" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-stone-800 dark:text-stone-100 mb-1">{item.title}</h4>
-                      <p className="text-sm text-stone-600 dark:text-stone-400">{item.subtitle}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="slide-in-right">
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Caring staff with resident"
-                className="rounded-2xl shadow-xl w-full"
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=400"
+                alt="Maple & Stone facility"
+                className="w-full h-64 object-cover"
               />
-            </div>
-          </div>
-        </div>
-      </section>
+              <div className="p-8">
+                <h2 className="text-4xl font-bold text-stone-800 dark:text-stone-100 mb-4 leading-tight">
+                  "A Legacy of Trust: How Three Generations Built Washington's Premier Adult Family Home"
+                </h2>
+                <p className="text-amber-600 font-semibold mb-4 text-lg">
+                  By Sarah Johnson, Health Reporter | March 15, 2024
+                </p>
+                <div className="text-lg text-stone-700 dark:text-stone-300 leading-relaxed space-y-4">
+                  <p>
+                    <strong>HERITAGE HEIGHTS, WA</strong> — In 1995, when the Johnson family first opened the doors of Maple & Stone Adult Family Home, they had a simple mission: provide the kind of care they would want for their own family members.
+                  </p>
+                  <p>
+                    Nearly three decades later, that philosophy has made Maple & Stone one of the most trusted names in adult family care, serving over 500 families and maintaining an unprecedented 98% satisfaction rating.
+                  </p>
+                  <p>
+                    "We're not just a business," says Margaret Johnson, third-generation owner and administrator. "We're a family caring for families. Every resident becomes part of our extended family tree."
+                  </p>
+                </div>
+              </div>
+            </article>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-stone-100 dark:bg-stone-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-stone-800 dark:text-stone-100 mb-4">
-              Comprehensive Care Services
-            </h3>
-            <p className="text-xl text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
-              Every service designed with dignity, respect, and individual needs in mind
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Personal Care Assistance",
-                items: ["Bathing and grooming", "Dressing assistance", "Mobility support", "Incontinence care"]
-              },
-              {
-                title: "Medication Management",
-                items: ["Prescription coordination", "Dosage monitoring", "Doctor communication", "Pharmacy liaison"]
-              },
-              {
-                title: "Nutritional Support",
-                items: ["Home-cooked meals", "Special dietary needs", "Hydration monitoring", "Nutritionist consultation"]
-              },
-              {
-                title: "Health Coordination",
-                items: ["Doctor appointments", "Physical therapy", "Specialist visits", "Health monitoring"]
-              },
-              {
-                title: "Activities & Enrichment",
-                items: ["Social programs", "Exercise classes", "Arts and crafts", "Community outings"]
-              },
-              {
-                title: "Family Communication",
-                items: ["Regular updates", "Care plan meetings", "Open visitation", "Emergency contact"]
-              }
-            ].map((service, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 service-card-animate" style={{animationDelay: `${index * 100}ms`}}>
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
-                    {service.title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="flex items-center text-stone-600 dark:text-stone-400">
-                        <CheckCircle className="w-4 h-4 mr-3 text-amber-600 flex-shrink-0" />
-                        <span className="text-sm">{item}</span>
-                      </li>
+            {/* Photo Gallery News Style */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card className="bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                <div className="bg-stone-100 dark:bg-stone-700 p-2 text-center border-b">
+                  <span className="font-bold text-sm">PHOTO FEATURE</span>
+                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300"
+                  alt="Residents in activities"
+                  className="w-full h-40 object-cover"
+                />
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-stone-800 dark:text-stone-100 mb-2">Daily Activities Bring Joy</h3>
+                  <p className="text-sm text-stone-600 dark:text-stone-400">Residents enjoy arts, crafts, and social hours in our comfortable common areas.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                <div className="bg-stone-100 dark:bg-stone-700 p-2 text-center border-b">
+                  <span className="font-bold text-sm">TESTIMONIAL</span>
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex justify-center mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-amber-500 fill-current" />
                     ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-20 bg-amber-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-8 h-8 text-amber-200 fill-current" />
-              ))}
-            </div>
-            <blockquote className="text-2xl md:text-3xl font-light italic mb-8 leading-relaxed">
-              "Maple & Stone has been our family's blessing. The staff treats Mom with such genuine 
-              care and respect. We couldn't have asked for a better place for her to call home."
-            </blockquote>
-            <footer className="text-amber-200">
-              <p className="font-semibold">— Jennifer Martinez</p>
-              <p className="text-sm">Daughter of resident Mary Martinez</p>
-            </footer>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white dark:bg-stone-800">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl font-bold text-stone-800 dark:text-stone-100 mb-4">
-                Schedule Your Personal Tour
-              </h3>
-              <p className="text-xl text-stone-600 dark:text-stone-400">
-                Experience the Maple & Stone difference firsthand
-              </p>
-            </div>
-            
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div>
-                <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl">
-                  <h4 className="text-2xl font-bold text-stone-800 dark:text-stone-100 mb-6">Contact Information</h4>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center">
-                        <Phone className="w-6 h-6 text-amber-600" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-stone-800 dark:text-stone-100">Phone</p>
-                        <p className="text-stone-600 dark:text-stone-400">(555) 789-0123</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-amber-600" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-stone-800 dark:text-stone-100">Address</p>
-                        <p className="text-stone-600 dark:text-stone-400">456 Maple Stone Drive<br />Heritage Heights, WA 98102</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-amber-600" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-stone-800 dark:text-stone-100">Tour Hours</p>
-                        <p className="text-stone-600 dark:text-stone-400">Monday - Sunday<br />9:00 AM - 6:00 PM</p>
-                      </div>
-                    </div>
                   </div>
-                  
-                  <div className="mt-8 p-6 bg-amber-50 dark:bg-amber-950 rounded-xl">
-                    <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Tours Available Daily</h5>
-                    <p className="text-sm text-amber-700 dark:text-amber-300">
-                      Walk-ins welcome, but appointments ensure dedicated time with our administrator.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <Card className="bg-stone-50 dark:bg-stone-900 border-stone-200 dark:border-stone-700">
-                <CardContent className="p-8">
-                  <h4 className="text-2xl font-bold text-stone-800 dark:text-stone-100 mb-6">Request Information</h4>
-                  <form className="space-y-4">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <input 
-                        type="text" 
-                        placeholder="First Name" 
-                        className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200"
-                      />
-                      <input 
-                        type="text" 
-                        placeholder="Last Name" 
-                        className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200"
-                      />
-                    </div>
-                    <input 
-                      type="tel" 
-                      placeholder="Phone Number" 
-                      className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200"
-                    />
-                    <input 
-                      type="email" 
-                      placeholder="Email Address" 
-                      className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200"
-                    />
-                    <textarea 
-                      placeholder="Tell us about your needs or questions..."
-                      rows={4}
-                      className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 resize-none"
-                    ></textarea>
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3">
-                      Send Message & Schedule Tour
-                    </Button>
-                  </form>
+                  <blockquote className="text-stone-700 dark:text-stone-300 italic text-center mb-3">
+                    "Maple & Stone gave Mom the dignity and care she deserved. We couldn't have asked for better."
+                  </blockquote>
+                  <p className="text-sm font-semibold text-center text-amber-600">— Jennifer Martinez, Family Member</p>
                 </CardContent>
               </Card>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-stone-800 dark:bg-stone-950 text-stone-300 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
-                  <Award className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white">Maple & Stone</h4>
-                  <p className="text-sm text-stone-400">Adult Family Home</p>
-                </div>
-              </div>
-              <p className="text-stone-400 text-sm">
-                Nearly three decades of trusted, compassionate care in a warm, home-like environment.
-              </p>
-            </div>
+          {/* Right Sidebar */}
+          <div className="lg:col-span-1 space-y-6">
             
-            <div>
-              <h5 className="font-semibold text-white mb-4">Quick Links</h5>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#about" className="hover:text-amber-400 transition-colors">About Us</a></li>
-                <li><a href="#services" className="hover:text-amber-400 transition-colors">Services</a></li>
-                <li><a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-amber-400 transition-colors">Admissions</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h5 className="font-semibold text-white mb-4">Contact Info</h5>
-              <div className="space-y-2 text-sm">
-                <p>(555) 789-0123</p>
-                <p>456 Maple Stone Drive<br />Heritage Heights, WA 98102</p>
-                <p className="text-amber-400">Licensed AFH #654321</p>
+            {/* Quick Facts Box */}
+            <Card className="bg-amber-50 dark:bg-amber-950 border-2 border-amber-600">
+              <div className="bg-amber-600 text-white p-2 text-center">
+                <span className="font-bold text-sm">QUICK FACTS</span>
               </div>
-            </div>
+              <CardContent className="p-4 space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Calendar className="w-5 h-5 text-amber-600" />
+                  <span className="text-sm"><strong>Founded:</strong> 1995</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Users className="w-5 h-5 text-amber-600" />
+                  <span className="text-sm"><strong>Families Served:</strong> 500+</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-5 h-5 text-amber-600" />
+                  <span className="text-sm"><strong>Licensed:</strong> AFH #654321</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Heart className="w-5 h-5 text-amber-600" />
+                  <span className="text-sm"><strong>Care Style:</strong> Family-centered</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Services Directory */}
+            <Card className="bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+              <div className="bg-stone-700 text-white p-2 text-center">
+                <span className="font-bold text-sm">SERVICES DIRECTORY</span>
+              </div>
+              <CardContent className="p-4">
+                <ul className="space-y-2 text-sm">
+                  <li className="border-b border-stone-200 dark:border-stone-600 pb-1">
+                    <strong>Personal Care</strong><br />
+                    <span className="text-stone-600 dark:text-stone-400">Daily living assistance</span>
+                  </li>
+                  <li className="border-b border-stone-200 dark:border-stone-600 pb-1">
+                    <strong>Medication Management</strong><br />
+                    <span className="text-stone-600 dark:text-stone-400">Professional coordination</span>
+                  </li>
+                  <li className="border-b border-stone-200 dark:border-stone-600 pb-1">
+                    <strong>Nutritional Support</strong><br />
+                    <span className="text-stone-600 dark:text-stone-400">Home-cooked meals</span>
+                  </li>
+                  <li className="border-b border-stone-200 dark:border-stone-600 pb-1">
+                    <strong>Activities Program</strong><br />
+                    <span className="text-stone-600 dark:text-stone-400">Social engagement</span>
+                  </li>
+                  <li>
+                    <strong>Family Communication</strong><br />
+                    <span className="text-stone-600 dark:text-stone-400">Regular updates</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Weather Widget Style */}
+            <Card className="bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
+              <div className="bg-blue-600 text-white p-2 text-center">
+                <span className="font-bold text-sm">VISITING CONDITIONS</span>
+              </div>
+              <CardContent className="p-4 text-center">
+                <Clock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <p className="font-bold">Excellent for Tours</p>
+                <p className="text-sm text-blue-700 dark:text-blue-300">Open Daily 9 AM - 6 PM</p>
+                <p className="text-xs text-blue-600 mt-2">Walk-ins Welcome</p>
+              </CardContent>
+            </Card>
+
+            {/* Advertisement Style */}
+            <Card className="bg-gradient-to-b from-amber-100 to-amber-50 dark:from-amber-900 dark:to-amber-950 border-2 border-amber-400">
+              <CardContent className="p-6 text-center">
+                <Award className="w-12 h-12 text-amber-600 mx-auto mb-3" />
+                <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-2">AWARD WINNER</h3>
+                <p className="text-sm text-amber-700 dark:text-amber-300 mb-3">
+                  "Best Adult Family Home 2023"<br />
+                  — Regional Health Guide
+                </p>
+                <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
+                  Read Review
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Bottom Section - Contact Form as Classified Ad */}
+        <div className="mt-12 bg-stone-100 dark:bg-stone-800 border-4 border-stone-300 dark:border-stone-600 rounded-lg p-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-2">CLASSIFIED OPPORTUNITY</h2>
+            <p className="text-amber-600 font-semibold">Don't Miss Out - Limited Availability</p>
           </div>
           
-          <div className="border-t border-stone-700 pt-8 text-center">
-            <p className="text-stone-500 text-sm">
-              © 2024 Maple & Stone Adult Family Home. All rights reserved.
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-stone-800 dark:text-stone-100 mb-4">SEEKING: Discerning Families</h3>
+              <p className="text-stone-700 dark:text-stone-300 mb-4">
+                For immediate placement in Heritage Heights' most trusted adult family home. 
+                Must value quality care, family atmosphere, and 28-year legacy of excellence.
+              </p>
+              <div className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4" />
+                  <span>Call: (555) 789-0123</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>Visit: 456 Maple Stone Drive</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="w-4 h-4" />
+                  <span>Email: info@mapleandstone.care</span>
+                </div>
+              </div>
+            </div>
+            
+            <Card className="bg-white dark:bg-stone-700 border-2 border-amber-600">
+              <div className="bg-amber-600 text-white p-3 text-center">
+                <span className="font-bold">RESPOND TODAY</span>
+              </div>
+              <CardContent className="p-6">
+                <form className="space-y-4">
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded bg-white dark:bg-stone-800"
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded bg-white dark:bg-stone-800"
+                  />
+                  <textarea 
+                    placeholder="Tell us about your needs..."
+                    rows={3}
+                    className="w-full p-3 border border-stone-300 dark:border-stone-600 rounded bg-white dark:bg-stone-800 resize-none"
+                  ></textarea>
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3">
+                    SUBMIT INQUIRY
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer as Newspaper Footer */}
+      <footer className="bg-stone-800 dark:bg-stone-950 text-stone-300 py-8 border-t-4 border-amber-600">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <Award className="w-8 h-8 text-amber-600" />
+            <div>
+              <h4 className="text-2xl font-bold text-white">THE MAPLE & STONE</h4>
+              <p className="text-amber-400 text-sm">Adult Family Home • Est. 1995</p>
+            </div>
+          </div>
+          <div className="border-t border-stone-600 pt-4">
+            <p className="text-stone-400 text-sm">
+              © 2024 Maple & Stone Adult Family Home • Licensed AFH #654321 • All Rights Reserved
+            </p>
+            <p className="text-amber-500 text-xs mt-1">
+              "Where Family Values Meet Professional Care" • (555) 789-0123
             </p>
           </div>
         </div>
       </footer>
 
       <style>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
+        @keyframes scroll {
+          0% {
+            transform: translateX(100%);
           }
-          to {
-            opacity: 1;
-            transform: scale(1);
+          100% {
+            transform: translateX(-100%);
           }
         }
         
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
         }
         
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes counterUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes serviceCardFloat {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .fade-in-scale {
-          animation: fadeInScale 0.8s ease-out;
-        }
-        
-        .slide-in-left {
-          animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .slide-in-right {
-          animation: slideInRight 0.8s ease-out 0.2s both;
-        }
-        
-        .counter-animate {
-          animation: counterUp 0.6s ease-out both;
-        }
-        
-        .service-card-animate {
-          animation: serviceCardFloat 0.6s ease-out both;
+        @font-face {
+          font-family: 'Newspaper';
+          font-weight: normal;
+          font-style: normal;
         }
       `}</style>
     </div>

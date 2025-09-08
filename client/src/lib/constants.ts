@@ -33,7 +33,8 @@ export const TEMPLATES = [
     name: "Bluebird Haven",
     description: "Elegant, sophisticated design with emphasis on luxury care.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    previewUrl: "/templates/bluebird-haven"
+    previewUrl: "/templates/bluebird-haven",
+    featured: true
   }
 ];
 

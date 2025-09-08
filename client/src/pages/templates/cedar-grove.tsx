@@ -1,128 +1,167 @@
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Clock, Users, Heart, Shield, Flower2, TreePine, Sun } from "lucide-react";
+import { Phone, MapPin, Heart, TreePine, Leaf, Mountain, ArrowDown } from "lucide-react";
 
 export default function CedarGroveTemplate() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-emerald-50 dark:from-green-950 dark:via-green-900 dark:to-emerald-900">
-      {/* Header */}
-      <header className="bg-white/90 dark:bg-green-900/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-800 to-green-900 text-white overflow-x-hidden">
+      {/* Fixed Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-green-900/80 backdrop-blur-md border-b border-green-700">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <TreePine className="w-8 h-8 text-green-600" />
-            <h1 className="text-2xl font-bold text-green-800 dark:text-green-100">Cedar Grove Living</h1>
+          <div className="flex items-center space-x-3">
+            <TreePine className="w-8 h-8 text-green-300" />
+            <span className="text-2xl font-bold">Cedar Grove Living</span>
           </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#home" className="text-green-700 hover:text-green-900 transition-colors">Home</a>
-            <a href="#services" className="text-green-700 hover:text-green-900 transition-colors">Services</a>
-            <a href="#amenities" className="text-green-700 hover:text-green-900 transition-colors">Amenities</a>
-            <a href="#contact" className="text-green-700 hover:text-green-900 transition-colors">Contact</a>
-          </nav>
-          <Button className="bg-green-600 hover:bg-green-700 text-white">
+          <Button className="bg-green-600 hover:bg-green-500 text-white">
             <Phone className="w-4 h-4 mr-2" />
-            (555) 123-4567
+            Call Now
           </Button>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20"></div>
+      {/* Full Screen Hero with Parallax */}
+      <section className="min-h-screen relative flex items-center justify-center parallax-hero">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white story-fade-in">
+            Where Stories
+            <span className="block text-green-300">Come to Rest</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-green-100 mb-12 story-fade-in-delayed leading-relaxed">
+            Nestled among ancient cedars, we honor the stories of a lifetime with gentle care and endless compassion.
+          </p>
+          <ArrowDown className="w-8 h-8 mx-auto animate-bounce text-green-300" />
+        </div>
+      </section>
+
+      {/* Story Section 1 - Our Beginning */}
+      <section className="min-h-screen flex items-center relative story-section">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1574786527010-ce7b6a5e3e7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+          }}
+        ></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <h2 className="text-5xl md:text-6xl font-bold text-green-800 dark:text-green-100 mb-6 leading-tight">
-                Where Nature Meets 
-                <span className="text-green-600 block">Compassionate Care</span>
-              </h2>
-              <p className="text-xl text-green-700 dark:text-green-200 mb-8 leading-relaxed">
-                Nestled in a serene, garden-like setting, Cedar Grove Living provides personalized 
-                adult family home care that honors the beauty of each season of life.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  Schedule Your Tour
-                </Button>
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                  Call Now: (555) 123-4567
-                </Button>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="story-text-slide">
+              <div className="flex items-center mb-6">
+                <Mountain className="w-12 h-12 text-green-300 mr-4" />
+                <span className="text-green-300 text-lg font-semibold tracking-wide">CHAPTER ONE</span>
               </div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8">
+                The Grove's
+                <span className="block text-green-300">Beginning</span>
+              </h2>
+              <p className="text-xl leading-relaxed mb-8 text-green-100">
+                In 1987, Martha and James Cedar planted the first tree in what would become our healing garden. 
+                They dreamed of a place where elders could find peace among nature's embrace, where every sunrise 
+                brought new hope and every sunset held cherished memories.
+              </p>
+              <p className="text-lg text-green-200 mb-8">
+                Today, those same trees tower overhead, their branches sheltering three generations of families 
+                who have called Cedar Grove home.
+              </p>
             </div>
-            <div className="relative animate-fade-in-right">
+            <div className="story-image-float">
+              <img 
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                alt="Founders planting trees"
+                className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section 2 - Our Philosophy */}
+      <section className="min-h-screen flex items-center relative story-section bg-green-800/20">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="story-image-float order-2 lg:order-1">
               <img 
                 src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Beautiful garden setting with senior care"
-                className="rounded-2xl shadow-2xl w-full"
+                alt="Garden therapy session"
+                className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-green-800 p-6 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 dark:bg-green-700 rounded-full flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-green-600" />
+            </div>
+            <div className="story-text-slide order-1 lg:order-2">
+              <div className="flex items-center mb-6">
+                <Leaf className="w-12 h-12 text-green-300 mr-4" />
+                <span className="text-green-300 text-lg font-semibold tracking-wide">CHAPTER TWO</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8">
+                Growing Together
+                <span className="block text-green-300">Naturally</span>
+              </h2>
+              <p className="text-xl leading-relaxed mb-8 text-green-100">
+                We believe healing happens in cycles, like the seasons. Our approach to care mirrors nature itself - 
+                patient, nurturing, and always focused on growth, even in life's winter chapters.
+              </p>
+              <div className="space-y-4">
+                {[
+                  "Morning walks through our medicinal herb garden",
+                  "Afternoon tea in the greenhouse conservatory", 
+                  "Evening stories by the stone fire pit",
+                  "Stargazing from our elevated deck"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center text-green-200 text-lg">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-4"></div>
+                    {item}
                   </div>
-                  <div>
-                    <p className="font-semibold text-green-800 dark:text-green-100">24/7 Care</p>
-                    <p className="text-sm text-green-600 dark:text-green-300">Always here for you</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white/50 dark:bg-green-900/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-green-800 dark:text-green-100 mb-4">
-              Comprehensive Care Services
-            </h3>
-            <p className="text-xl text-green-600 dark:text-green-300">
-              Tailored support for every aspect of daily living
+      {/* Care Philosophy - Full Width */}
+      <section className="py-24 bg-gradient-to-r from-green-900 via-green-800 to-green-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-600/10 animate-pulse-slow"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">
+              The Cedar Grove
+              <span className="block text-green-300">Promise</span>
+            </h2>
+            <p className="text-2xl text-green-100 max-w-3xl mx-auto">
+              Like the mighty cedars that shelter us, our care is deep-rooted, strong, and everlasting.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Users,
-                title: "Personal Care",
-                description: "Assistance with daily activities, medication management, and personal hygiene with dignity and respect.",
-                features: ["Bathing & grooming", "Medication reminders", "Mobility assistance", "Meal preparation"]
+                title: "Rooted Care",
+                description: "Deep, personalized attention that grows from understanding each resident's unique story and needs.",
+                icon: TreePine
               },
               {
-                icon: Heart,
-                title: "Health & Wellness",
-                description: "Coordinated healthcare services and wellness programs to maintain optimal health and vitality.",
-                features: ["Doctor coordination", "Physical therapy", "Mental health support", "Wellness activities"]
+                title: "Seasonal Wellness", 
+                description: "Activities and care that flow with nature's rhythms, promoting health in body, mind, and spirit.",
+                icon: Leaf
               },
               {
-                icon: Sun,
-                title: "Enrichment Programs",
-                description: "Engaging activities and social programs designed to promote joy, purpose, and connection.",
-                features: ["Garden therapy", "Art & music", "Social outings", "Community events"]
+                title: "Generational Love",
+                description: "Creating bonds that span generations, where families become part of our extended Cedar Grove family.",
+                icon: Heart
               }
-            ].map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 bg-white/80 dark:bg-green-800/50 border-green-200 dark:border-green-700">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <service.icon className="w-8 h-8 text-green-600 dark:text-green-300" />
-                  </div>
-                  <h4 className="text-2xl font-semibold text-green-800 dark:text-green-100 mb-4 text-center">
-                    {service.title}
-                  </h4>
-                  <p className="text-green-700 dark:text-green-200 mb-6 text-center">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-green-600 dark:text-green-300">
-                        <Flower2 className="w-4 h-4 mr-2 text-green-500" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+            ].map((value, index) => (
+              <Card key={index} className="bg-green-800/30 border-green-600 backdrop-blur-sm hover:bg-green-700/40 transition-all duration-500 transform hover:-translate-y-4 philosophy-card" style={{animationDelay: `${index * 200}ms`}}>
+                <CardContent className="p-8 text-center">
+                  <value.icon className="w-16 h-16 text-green-300 mx-auto mb-6" />
+                  <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                  <p className="text-green-100 text-lg leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -130,131 +169,48 @@ export default function CedarGroveTemplate() {
         </div>
       </section>
 
-      {/* Amenities Section */}
-      <section id="amenities" className="py-20 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-green-800 dark:text-green-100 mb-4">
-              Home-Like Amenities
-            </h3>
-            <p className="text-xl text-green-600 dark:text-green-300">
-              Every comfort of home in a beautiful, natural setting
-            </p>
-          </div>
+      {/* Final Story - Your Chapter */}
+      <section className="min-h-screen flex items-center relative story-section">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-40"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+          }}
+        ></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-6xl md:text-7xl font-bold mb-12 story-fade-in">
+            Your Story
+            <span className="block text-green-300">Continues Here</span>
+          </h2>
+          <p className="text-2xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed story-fade-in-delayed">
+            Every life is a story worth celebrating. At Cedar Grove Living, we're honored to be part of 
+            the chapters yet to be written, the memories yet to be made, and the legacy yet to unfold.
+          </p>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="bg-green-800/60 backdrop-blur-lg rounded-3xl p-12 max-w-2xl mx-auto border border-green-600">
+            <h3 className="text-3xl font-bold mb-8">Begin Your Next Chapter</h3>
             <div className="space-y-6">
-              {[
-                "Spacious private and semi-private rooms",
-                "Beautiful landscaped gardens and walking paths",
-                "Cozy common areas with natural lighting",
-                "Professional kitchen with home-cooked meals",
-                "Peaceful outdoor patios and seating areas",
-                "Secure, fenced property with 24/7 supervision"
-              ].map((amenity, index) => (
-                <div key={index} className="flex items-center space-x-4 animate-fade-in-left" style={{animationDelay: `${index * 100}ms`}}>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-lg text-green-700 dark:text-green-200">{amenity}</span>
-                </div>
-              ))}
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1495847785913-60c0b8f4e33f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Beautiful garden and outdoor spaces"
-                className="rounded-2xl shadow-xl w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-green-800 dark:bg-green-950 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-4xl font-bold mb-6">Visit Cedar Grove Living</h3>
-              <p className="text-xl text-green-100 mb-8">
-                Experience the warmth and tranquility of our nature-centered care community. 
-                Schedule a personal tour today.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-4">
-                  <Phone className="w-6 h-6 text-green-300" />
-                  <span className="text-lg">(555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6 text-green-300" />
-                  <span className="text-lg">123 Cedar Grove Lane, Peaceful Valley, WA 98101</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Clock className="w-6 h-6 text-green-300" />
-                  <span className="text-lg">Tours available daily 9 AM - 5 PM</span>
-                </div>
+              <div className="flex items-center justify-center space-x-4 text-xl">
+                <Phone className="w-6 h-6 text-green-300" />
+                <span>(555) 123-GROVE</span>
               </div>
-              
-              <Button size="lg" className="bg-white text-green-800 hover:bg-green-50">
-                Schedule Your Visit Today
+              <div className="flex items-center justify-center space-x-4 text-xl">
+                <MapPin className="w-6 h-6 text-green-300" />
+                <span>123 Cedar Grove Lane, Peaceful Valley, WA</span>
+              </div>
+              <Button size="lg" className="bg-green-600 hover:bg-green-500 text-white font-bold px-12 py-6 text-xl mt-8">
+                Schedule Your Story Tour
               </Button>
             </div>
-            
-            <Card className="bg-white/10 border-green-600">
-              <CardContent className="p-8">
-                <h4 className="text-2xl font-bold mb-6 text-center">Quick Contact Form</h4>
-                <form className="space-y-4">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="w-full p-3 rounded-lg bg-white/20 border border-green-300 text-white placeholder-green-200"
-                  />
-                  <input 
-                    type="tel" 
-                    placeholder="Phone Number" 
-                    className="w-full p-3 rounded-lg bg-white/20 border border-green-300 text-white placeholder-green-200"
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="w-full p-3 rounded-lg bg-white/20 border border-green-300 text-white placeholder-green-200"
-                  />
-                  <textarea 
-                    placeholder="How can we help you?"
-                    rows={4}
-                    className="w-full p-3 rounded-lg bg-white/20 border border-green-300 text-white placeholder-green-200 resize-none"
-                  ></textarea>
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-green-900 dark:bg-green-950 text-green-100 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <TreePine className="w-6 h-6 text-green-400" />
-            <span className="text-xl font-bold">Cedar Grove Living</span>
-          </div>
-          <p className="text-green-300">
-            © 2024 Cedar Grove Living. Licensed Adult Family Home #123456.
-          </p>
-          <p className="text-sm text-green-400 mt-2">
-            Where nature meets compassionate care • (555) 123-4567
-          </p>
-        </div>
-      </footer>
-
       <style>{`
-        @keyframes fade-in-up {
+        @keyframes storyFadeIn {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(50px);
           }
           to {
             opacity: 1;
@@ -262,10 +218,10 @@ export default function CedarGroveTemplate() {
           }
         }
         
-        @keyframes fade-in-right {
+        @keyframes storyTextSlide {
           from {
             opacity: 0;
-            transform: translateX(30px);
+            transform: translateX(-80px);
           }
           to {
             opacity: 1;
@@ -273,27 +229,72 @@ export default function CedarGroveTemplate() {
           }
         }
         
-        @keyframes fade-in-left {
+        @keyframes storyImageFloat {
           from {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(80px) scale(0.9);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0) scale(1);
           }
         }
         
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out;
+        @keyframes philosophyCard {
+          from {
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
         
-        .animate-fade-in-right {
-          animation: fade-in-right 0.8s ease-out 0.2s both;
+        .story-fade-in {
+          animation: storyFadeIn 1.5s ease-out;
         }
         
-        .animate-fade-in-left {
-          animation: fade-in-left 0.6s ease-out both;
+        .story-fade-in-delayed {
+          animation: storyFadeIn 1.5s ease-out 0.5s both;
+        }
+        
+        .story-text-slide {
+          animation: storyTextSlide 1.2s ease-out;
+        }
+        
+        .story-image-float {
+          animation: storyImageFloat 1.2s ease-out 0.3s both;
+        }
+        
+        .philosophy-card {
+          animation: philosophyCard 0.8s ease-out both;
+        }
+        
+        .story-section {
+          background-attachment: fixed;
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.1;
+          }
+          50% {
+            opacity: 0.3;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .parallax-hero {
+            background-attachment: scroll;
+          }
+          .story-section {
+            background-attachment: scroll;
+          }
         }
       `}</style>
     </div>
