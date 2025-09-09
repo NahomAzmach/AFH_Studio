@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Users, MapPin, Shield } from "lucide-react";
+import afh2Image from "@assets/AFH2_1757374349746.jpg";
+import afh5Image from "@assets/AFH5_1757374349761.jpg";
 
 export default function Features() {
   return (
@@ -34,8 +36,8 @@ export default function Features() {
           </div>
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Caring staff with seniors"
+              src={afh2Image}
+              alt="Professional caregiver providing personalized attention"
               className="rounded-xl shadow-xl w-full"
             />
           </div>
@@ -45,8 +47,8 @@ export default function Features() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="order-2 lg:order-1">
             <img 
-              src="https://pixabay.com/get/gccf4bdc2d341edde7c624de90f829f8552b714e613ef5014765f7b650253747fe881459bed1aa78e81b3f41f4947c77c8698a37ca9fcb171030284d4768d2d95_1280.jpg"
-              alt="Professional caregiving assistance"
+              src={afh5Image}
+              alt="Happy community moments and social activities"
               className="rounded-xl shadow-xl w-full"
             />
           </div>

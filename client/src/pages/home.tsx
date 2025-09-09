@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, AlertCircle, Clock, Phone } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
 import teamImage from "@assets/Team_1757374829738.jpeg";
+import everbloomImage from "@assets/afh_everbloom_1757375636779.png";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
@@ -30,27 +31,36 @@ export default function Home() {
       <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-muted">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Launch an Adult Family Home website you're proud of—this week
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="block overflow-hidden">
+                <span className="inline-block animate-slide-up bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Launch an Adult Family Home website
+                </span>
+              </span>
+              <span className="block overflow-hidden">
+                <span className="inline-block animate-slide-up-delay bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  you're proud of—this week
+                </span>
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Done‑for‑you design, content, and updates so you can focus on care.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up">
+              <span className="inline-block animate-bounce-subtle">Done‑for‑you</span> design, content, and updates so you can <span className="text-primary font-semibold animate-pulse-slow">focus on care</span>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-buttons">
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-primary text-primary-foreground px-8 py-4 text-lg hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                  className="bg-primary text-primary-foreground px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 animate-glow"
                   data-testid="hero-cta-primary"
                 >
-                  Start My Site
+                  <span className="relative z-10">Start My Site</span>
                 </Button>
               </Link>
               <Link href="/templates">
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-border px-8 py-4 text-lg hover:bg-muted transition-colors"
+                  className="border-2 border-border px-8 py-4 text-lg hover:bg-muted transition-all duration-300 transform hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-lg"
                   data-testid="hero-cta-secondary"
                 >
                   See Templates
@@ -135,31 +145,24 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-16 bg-background">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-8">Built for AFHs</h2>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { icon: "📱", title: "Mobile‑ready" },
-                  { icon: "⚡", title: "Fast & lightweight" },
-                  { icon: "🎯", title: "Friendly support" },
-                  { icon: "🛡️", title: "No PHI collection" }
-                ].map((item, index) => (
-                  <div key={index} className="space-y-2 text-center">
-                    <div className="text-4xl mb-2">{item.icon}</div>
-                    <p className="font-semibold">{item.title}</p>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">Built for AFHs</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              {[
+                { icon: "📱", title: "Mobile‑ready" },
+                { icon: "⚡", title: "Fast & lightweight" },
+                { icon: "🎯", title: "Friendly support" },
+                { icon: "🛡️", title: "No PHI collection" }
+              ].map((item, index) => (
+                <div key={index} className="group">
+                  <div className="bg-white dark:bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                    <p className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors duration-300">{item.title}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional adult family home environment" 
-                className="rounded-xl shadow-xl w-full" 
-              />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -221,14 +224,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mini Case Study */}
-      <section className="py-16 bg-background">
+      {/* Case Study */}
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Recent Outcome</h2>
-            <p className="text-xl">
-              <strong className="text-secondary">+40% tour inquiries</strong> after a simple redesign with clearer buttons and services highlights.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Recent Success Story</h2>
+              <div className="bg-white dark:bg-card rounded-xl p-8 shadow-lg border border-border">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Everbloom Care</h3>
+                <p className="text-lg mb-6 text-muted-foreground">
+                  After launching their new website with our warm, garden-themed design, Everbloom Care saw immediate results in family engagement.
+                </p>
+                <div className="grid grid-cols-2 gap-6 text-center">
+                  <div>
+                    <div className="text-3xl font-bold text-secondary mb-2">+40%</div>
+                    <p className="text-sm text-muted-foreground">Tour Inquiries</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-accent mb-2">85%</div>
+                    <p className="text-sm text-muted-foreground">Mobile Traffic</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img 
+                src={everbloomImage} 
+                alt="Everbloom Care website success story" 
+                className="rounded-xl shadow-xl w-full border border-border" 
+              />
+            </div>
           </div>
         </div>
       </section>
