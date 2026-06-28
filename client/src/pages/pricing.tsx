@@ -24,7 +24,7 @@ export default function Pricing() {
                   <span className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold">Most Popular</span>
                 </div>
               )}
-              <CardContent className="p-8">
+              <CardContent className="p-8 flex flex-col h-full">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="text-4xl font-bold mb-2">
@@ -36,7 +36,8 @@ export default function Pricing() {
                   )}
                   <p className="text-muted-foreground">{plan.description || plan.period}</p>
                 </div>
-                <ul className="space-y-3 mb-8">
+                
+                <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
@@ -44,6 +45,15 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
+
+                {/* NEW: Render the Update Policy here */}
+                {plan.updatePolicy && (
+                  <div className="mb-8 p-4 bg-muted/50 rounded-lg border border-border text-sm text-muted-foreground">
+                    <span className="font-semibold block mb-1 text-foreground">Update Policy:</span>
+                    {plan.updatePolicy}
+                  </div>
+                )}
+
                 <Link href="/contact">
                   <Button
                     variant={plan.popular ? "default" : "outline"}
