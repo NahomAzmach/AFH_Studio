@@ -78,11 +78,11 @@ export default function Header() {
 
       <div
         className={cn(
-          "mobile-menu fixed inset-y-0 left-0 z-50 w-72 border-r border-border bg-[#fffaf3] text-[#1f2e27] shadow-2xl dark:bg-[#102019] dark:text-[#f5efe3] md:hidden",
+          "mobile-menu fixed bottom-0 left-0 top-0 z-50 w-[min(22rem,85vw)] overflow-hidden border-r border-[#e5ddd0] bg-[#fffaf3] text-[#1f2e27] shadow-2xl dark:border-[#244238] dark:bg-[#102019] dark:text-[#f5efe3] md:hidden",
           mobileMenuOpen && "open",
         )}
       >
-        <div className="flex h-full flex-col p-6">
+        <div className="mobile-menu-panel flex h-[100dvh] flex-col p-6">
           <div className="mb-8 flex items-center justify-between">
             <span className="text-xl font-bold text-primary font-display">AFH Web Studio</span>
             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
@@ -96,7 +96,7 @@ export default function Header() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block rounded-lg px-3 py-2.5 text-foreground transition-colors hover:bg-muted hover:text-primary"
+                      className="block rounded-lg px-3 py-2.5 text-[#1f2e27] transition-colors hover:bg-[#efe8dc] hover:text-primary dark:text-[#f5efe3] dark:hover:bg-[#1b332a]"
                       onClick={() => setMobileMenuOpen(false)}
                       data-testid={`mobile-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
                     >
