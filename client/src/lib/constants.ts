@@ -75,19 +75,24 @@ export const TEMPLATES = [
     previewUrl: "/templates/nature-calm",
   },
 ];
+export const HOURLY_RATE = 95; 
 
 export const PRICING_PLANS = [
   {
     name: "Starter",
-    price: "$700",
-    period: "One-time launch + 1 month support",
+    price: "$600",
+    period: "One-time build",
+    setupFee: null,
+    description: "Best for DIYers who just need the initial build.",
     features: [
       "Complete 5-page website",
       "Template customization",
       "Contact forms & click-to-call",
       "SEO basics setup",
-      "1 month of updates",
+      "30 days of post-launch bug fixes", 
     ],
+    // Explicitly call out the cost of changes after the initial launch
+    updatePolicy: `Future content updates billed at $${HOURLY_RATE}/hr (1-hr minimum).`, 
     popular: false,
     ctaText: "Get Started",
   },
@@ -96,14 +101,16 @@ export const PRICING_PLANS = [
     price: "$197",
     period: "/month",
     setupFee: "$550 one-time setup fee",
-    description: "Everything you need for ongoing success",
+    description: "Everything you need for ongoing success & hands-off maintenance.",
     features: [
       "Everything in Starter",
-      "Monthly content updates (2 hours)",
+      "Monthly content updates (Up to 2 hours)",
       "Hosting & security monitoring",
       "Analytics & reporting",
       "Email support",
     ],
+    // Protect yourself from scope creep on the monthly plan
+    updatePolicy: `Additional updates beyond 2 hours billed at a discounted $${HOURLY_RATE - 20}/hr.`,
     popular: true,
     ctaText: "Start Standard Plan",
   },
@@ -112,14 +119,15 @@ export const PRICING_PLANS = [
     price: "$347",
     period: "/month",
     setupFee: "$550 one-time setup fee",
-    description: "Premium service with priority support",
+    description: "Premium service with priority support and proactive improvements.",
     features: [
       "Everything in Standard",
-      "Extended updates (4 hours/month)",
+      "Extended updates (Up to 4 hours/month)",
       "Quarterly photo refresh",
       "Copy tune-ups & optimization",
       "Priority support (24hr response)",
     ],
+    updatePolicy: `Additional updates beyond 4 hours billed at a discounted $${HOURLY_RATE - 20}/hr.`,
     popular: false,
     ctaText: "Get Plus Plan",
   },
