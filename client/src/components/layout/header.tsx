@@ -70,33 +70,18 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/50 md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
-
-      <div
-        className={cn(
-          "mobile-menu fixed bottom-0 left-0 top-0 z-50 w-[min(22rem,85vw)] overflow-hidden border-r border-[#e5ddd0] bg-[#fffaf3] text-[#1f2e27] shadow-2xl dark:border-[#244238] dark:bg-[#102019] dark:text-[#f5efe3] md:hidden",
-          mobileMenuOpen && "open",
-        )}
-      >
-        <div className="mobile-menu-panel flex h-[100dvh] flex-col p-6">
-          <div className="mb-8 flex items-center justify-between">
-            <span className="text-xl font-bold text-primary font-display">AFH Web Studio</span>
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-              <X className="h-5 w-5" />
-            </Button>
-          </div>
-          <nav className="flex-1">
+        <div className="border-t border-[#e5ddd0] bg-[#fffaf3] px-4 py-5 shadow-xl dark:border-[#244238] dark:bg-[#102019] md:hidden">
+          <nav className="container mx-auto max-w-6xl">
             <ul className="space-y-1">
               {[{ href: "/", label: "Home" }, ...NAV_LINKS, { href: "/plan-my-site", label: "Plan My Site" }, { href: "/contact", label: "Contact" }].map(
                 (link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block rounded-lg px-3 py-2.5 text-[#1f2e27] transition-colors hover:bg-[#efe8dc] hover:text-primary dark:text-[#f5efe3] dark:hover:bg-[#1b332a]"
+                      className={cn(
+                        "block rounded-lg px-4 py-3 text-base font-semibold text-[#1f2e27] transition-colors hover:bg-[#efe8dc] dark:text-[#f5efe3] dark:hover:bg-[#1b332a]",
+                        location === link.href && "bg-[#efe8dc] text-primary dark:bg-[#1b332a]",
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
                       data-testid={`mobile-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
                     >
@@ -106,14 +91,14 @@ export default function Header() {
                 ),
               )}
             </ul>
+            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="mt-4 w-full" data-testid="mobile-cta">
+                Start My Site
+              </Button>
+            </Link>
           </nav>
-          <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-            <Button className="w-full" data-testid="mobile-cta">
-              Start My Site
-            </Button>
-          </Link>
         </div>
-      </div>
+      )}
     </header>
   );
 }

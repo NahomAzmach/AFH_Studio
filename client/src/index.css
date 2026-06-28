@@ -104,29 +104,6 @@
 }
 
 @layer components {
-  .mobile-menu {
-    background-color: hsl(var(--card));
-    color: hsl(var(--card-foreground));
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  .mobile-menu-panel {
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: #fffaf3;
-    color: #1f2e27;
-  }
-
-  .dark .mobile-menu-panel {
-    background-color: #102019;
-    color: #f5efe3;
-  }
-
-  .mobile-menu.open {
-    transform: translateX(0);
-  }
-
   .preview-frame {
     width: 100%;
     height: 600px;
