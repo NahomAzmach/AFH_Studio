@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { TEMPLATES } from "@/lib/constants";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -117,11 +118,11 @@ export default function Contact() {
                       <SelectValue placeholder="Select one..." />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="everbloom">Everbloom Care</SelectItem>
-                      <SelectItem value="cedar-grove">Cedar Grove Living</SelectItem>
-                      <SelectItem value="maple-stone">Maple & Stone</SelectItem>
-                      <SelectItem value="sunrise-orchard">Sunrise Orchard</SelectItem>
-                      <SelectItem value="bluebird-haven">Bluebird Haven</SelectItem>
+                      {TEMPLATES.map((template) => (
+                        <SelectItem key={template.id} value={template.id}>
+                          {template.name}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>

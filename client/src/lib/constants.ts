@@ -3,6 +3,10 @@ import cedarGroveThumb from "@assets/afh_cedarGrove_1757375636778.jpg";
 import mapleStoneThumb from "@assets/afh_maple_stone_1757375636781.jpg";
 import sunriseOrchardThumb from "@assets/afh_SunriseOrchard_1757375636782.jpg";
 import bluebirdHavenThumb from "@assets/afh_bluebird_1757375636774.jpg";
+import willowCourtThumb from "@assets/mood-minimalist-airy.svg";
+import sunbeamCottageThumb from "@assets/mood-vibrant-playful.svg";
+import heritageManorThumb from "@assets/mood-traditional-trustworthy.svg";
+import sageMeadowThumb from "@assets/mood-nature-calm.svg";
 
 export const TEMPLATES = [
   {
@@ -42,12 +46,40 @@ export const TEMPLATES = [
     previewUrl: "/templates/bluebird-haven",
     featured: true,
   },
+  {
+    id: "willow-court",
+    name: "Willow Court",
+    description: "Minimalist & airy — clean layouts, lots of breathing room, soft neutral tones.",
+    image: willowCourtThumb,
+    previewUrl: "/templates/minimalist-airy",
+  },
+  {
+    id: "sunbeam-cottage",
+    name: "Sunbeam Cottage",
+    description: "Vibrant & playful — bright colors and energetic photography that feel lively.",
+    image: sunbeamCottageThumb,
+    previewUrl: "/templates/vibrant-playful",
+  },
+  {
+    id: "heritage-manor",
+    name: "Heritage Manor",
+    description: "Traditional & trustworthy — classic, professional, and reassuring for families.",
+    image: heritageManorThumb,
+    previewUrl: "/templates/traditional-trustworthy",
+  },
+  {
+    id: "sage-meadow",
+    name: "Sage Meadow",
+    description: "Nature & calm — organic shapes, greens, and a peaceful, grounded feel.",
+    image: sageMeadowThumb,
+    previewUrl: "/templates/nature-calm",
+  },
 ];
 
 export const PRICING_PLANS = [
   {
     name: "Starter",
-    price: "$597",
+    price: "$700",
     period: "One-time launch + 1 month support",
     features: [
       "Complete 5-page website",
@@ -63,6 +95,7 @@ export const PRICING_PLANS = [
     name: "Standard",
     price: "$197",
     period: "/month",
+    setupFee: "$550 one-time setup fee",
     description: "Everything you need for ongoing success",
     features: [
       "Everything in Starter",
@@ -78,6 +111,7 @@ export const PRICING_PLANS = [
     name: "Plus",
     price: "$347",
     period: "/month",
+    setupFee: "$550 one-time setup fee",
     description: "Premium service with priority support",
     features: [
       "Everything in Standard",

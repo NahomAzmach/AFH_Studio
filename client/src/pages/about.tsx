@@ -28,6 +28,12 @@ export default function About() {
             AI/Machine Learning. This technical foundation, combined with my family's AFH experience, gives
             me a unique perspective on what your website really needs to succeed.
           </p>
+          <p className="text-lg text-muted-foreground mb-6">
+            I balance this work with a full-time job and graduate school, so I respect my time and yours —
+            but as long as I have the right details from you up front, everything moves smoothly from there.
+            I genuinely love helping AFH families get a website they're proud of, and every project gets my
+            full attention once it's underway.
+          </p>
           <div className="flex justify-center">
             <a
               href="https://www.linkedin.com/in/nahom-azmach/"

@@ -31,6 +31,9 @@ export default function Pricing() {
                     {plan.price}
                     {plan.period && <span className="text-lg font-normal text-muted-foreground">{plan.period}</span>}
                   </div>
+                  {plan.setupFee && (
+                    <p className="text-sm font-semibold text-secondary mb-1">+ {plan.setupFee}</p>
+                  )}
                   <p className="text-muted-foreground">{plan.description || plan.period}</p>
                 </div>
                 <ul className="space-y-3 mb-8">
@@ -62,7 +65,7 @@ export default function Pricing() {
               {
                 question: "How fast can we launch my website?",
                 answer:
-                  "Most websites launch within 5-7 business days after receiving your content and photos. The Starter plan includes everything needed for a professional launch.",
+                  "Most websites launch within 5-7 business days once we have your complete details — content, photos, and answers to our intake questions (the Plan My Site questionnaire is the fastest way to get this to us). I balance this work around a full-time job and grad school, so having everything upfront is what keeps your project moving quickly.",
               },
               {
                 question: "Can you use my existing logo and photos?",
