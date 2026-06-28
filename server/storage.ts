@@ -1,37 +1,40 @@
-import { type User, type InsertUser } from "@shared/schema";
+import {
+  type InsertWebsitePlanRequest,
+  type WebsitePlanRequest,
+} from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// modify the interface with any CRUD methods
-// you might need
-
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createWebsitePlanRequest(
+    request: InsertWebsitePlanRequest,
+  ): Promise<WebsitePlanRequest>;
+  getWebsitePlanRequests(): Promise<WebsitePlanRequest[]>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private websitePlanRequests: Map<string, WebsitePlanRequest>;
 
   constructor() {
-    this.users = new Map();
+    this.websitePlanRequests = new Map();
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
+  async createWebsitePlanRequest(
+    request: InsertWebsitePlanRequest,
+  ): Promise<WebsitePlanRequest> {
     const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    const record: WebsitePlanRequest = {
+      ...request,
+      id,
+      createdAt: new Date(),
+    };
+    this.websitePlanRequests.set(id, record);
+    return record;
+  }
+
+  async getWebsitePlanRequests(): Promise<WebsitePlanRequest[]> {
+    return Array.from(this.websitePlanRequests.values()).sort(
+      (a, b) => b.createdAt.getTime() - a.createdAt.getTime(),
+    );
   }
 }
 

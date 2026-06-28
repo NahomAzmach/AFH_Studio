@@ -1,23 +1,22 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, AlertCircle, Clock, Phone } from "lucide-react";
+import { Check, AlertCircle, Clock, Phone, Sparkles } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
 import teamImage from "@assets/Team_1757374829738.jpeg";
-import everbloomImage from "@assets/afh_everbloom_1757375636779.png";
+import everbloomImage from "@assets/afh_everbloom_1757375636779.jpg";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
-    // Handle internal template routes
     if (url.startsWith("/templates/")) {
       const fullUrl = window.location.origin + url;
       const event = new CustomEvent("openPreview", {
-        detail: { url: fullUrl, templateName }
+        detail: { url: fullUrl, templateName },
       });
       document.dispatchEvent(event);
     } else if (url === "https://everbloomcare.replit.app") {
       const event = new CustomEvent("openPreview", {
-        detail: { url, templateName }
+        detail: { url, templateName },
       });
       document.dispatchEvent(event);
     } else {
@@ -28,9 +27,14 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-24 lg:py-36 bg-gradient-to-br from-background via-background to-muted">
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl animate-float" />
+        <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-secondary/10 blur-3xl animate-float" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="text-center max-w-4xl mx-auto">
+            <span className="section-eyebrow mb-6">
+              <Sparkles className="w-3.5 h-3.5" /> Built exclusively for Adult Family Homes
+            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="block overflow-hidden">
                 <span className="inline-block animate-slide-up bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -43,24 +47,34 @@ export default function Home() {
                 </span>
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed animate-fade-in-up">
               <span className="inline-block animate-bounce-subtle">Done‑for‑you</span> design, content, and updates so you can <span className="text-primary font-semibold animate-pulse-slow">focus on care</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-buttons">
               <Link href="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-primary text-primary-foreground px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 animate-glow"
+                <Button
+                  size="lg"
+                  className="px-8 py-4 text-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 animate-glow"
                   data-testid="hero-cta-primary"
                 >
                   <span className="relative z-10">Start My Site</span>
                 </Button>
               </Link>
-              <Link href="/templates">
-                <Button 
-                  variant="outline" 
+              <Link href="/plan-my-site">
+                <Button
                   size="lg"
-                  className="border-2 border-border px-8 py-4 text-lg hover:bg-muted transition-all duration-300 transform hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-lg"
+                  variant="secondary"
+                  className="px-8 py-4 text-lg shadow-lg transform hover:-translate-y-1"
+                  data-testid="hero-cta-plan"
+                >
+                  <Sparkles className="w-4 h-4" /> Plan My Site
+                </Button>
+              </Link>
+              <Link href="/templates">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 text-lg hover:bg-muted transition-all duration-300 transform hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-lg"
                   data-testid="hero-cta-secondary"
                 >
                   See Templates
@@ -79,27 +93,27 @@ export default function Home() {
             <p className="text-xl text-muted-foreground">Many AFH websites fail to convert visitors into tour bookings</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center shadow-sm hover:shadow-md transition-shadow">
+            <Card className="text-center shadow-sm hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-destructive/10 text-destructive rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div className="w-12 h-12 bg-destructive/10 text-destructive rounded-xl flex items-center justify-center mx-auto mb-6">
                   <AlertCircle className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Outdated or unclear</h3>
                 <p className="text-muted-foreground">Families can't quickly tell what you offer, your rooms, or how to book a tour.</p>
               </CardContent>
             </Card>
-            <Card className="text-center shadow-sm hover:shadow-md transition-shadow">
+            <Card className="text-center shadow-sm hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Clock className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Hard to keep updated</h3>
                 <p className="text-muted-foreground">Menu changes, new activities, or staffing updates shouldn't take weeks.</p>
               </CardContent>
             </Card>
-            <Card className="text-center shadow-sm hover:shadow-md transition-shadow">
+            <Card className="text-center shadow-sm hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Low calls or tour requests</h3>
@@ -119,9 +133,9 @@ export default function Home() {
               <ul className="space-y-4">
                 {[
                   "Modern design with clear services & amenities",
-                  "Click‑to‑call and tour request options", 
+                  "Click‑to‑call and tour request options",
                   "SEO basics and fast loading",
-                  "Accessibility‑minded (contrast, keyboard nav, alt text)"
+                  "Accessibility‑minded (contrast, keyboard nav, alt text)",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -133,12 +147,12 @@ export default function Home() {
               </ul>
             </div>
             <div className="relative">
-              <img 
-                src={teamImage} 
-                alt="AFH Web Studio team - experts in adult family home websites" 
-                className="rounded-xl shadow-xl w-full" 
+              <img
+                src={teamImage}
+                alt="AFH Web Studio team - experts in adult family home websites"
+                className="rounded-2xl shadow-xl w-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
             </div>
           </div>
         </div>
@@ -154,10 +168,10 @@ export default function Home() {
                 { icon: "📱", title: "Mobile‑ready" },
                 { icon: "⚡", title: "Fast & lightweight" },
                 { icon: "🎯", title: "Friendly support" },
-                { icon: "🛡️", title: "No PHI collection" }
+                { icon: "🛡️", title: "No PHI collection" },
               ].map((item, index) => (
                 <div key={index} className="group">
-                  <div className="bg-white dark:bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-2">
                     <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
                     <p className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors duration-300">{item.title}</p>
                   </div>
@@ -175,32 +189,20 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Live Template Demos</h2>
             <p className="text-xl text-muted-foreground">Choose a starting point. We'll tailor the colors, photos, and copy to your home.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {TEMPLATES.map((template) => (
-              <Card key={template.id} className="overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
-                <img 
-                  src={template.image}
-                  alt={`${template.name} template preview`}
-                  className="w-full h-48 object-cover"
-                />
+              <Card key={template.id} className="overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <img src={template.image} alt={`${template.name} template preview`} className="w-full h-48 object-cover" />
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{template.name}</h3>
                   <p className="text-muted-foreground mb-4">{template.description}</p>
                   <div className="flex flex-col space-y-2">
-                    <Button 
-                      onClick={() => openPreview(template.previewUrl, template.name)}
-                      className="bg-primary text-primary-foreground hover:opacity-90"
-                      data-testid={`template-preview-${template.id}`}
-                    >
+                    <Button onClick={() => openPreview(template.previewUrl, template.name)} data-testid={`template-preview-${template.id}`}>
                       Live Preview
                     </Button>
                     <Link href="/contact">
-                      <Button 
-                        variant="outline" 
-                        className="w-full border-border hover:bg-muted"
-                        data-testid={`template-use-${template.id}`}
-                      >
+                      <Button variant="outline" className="w-full" data-testid={`template-use-${template.id}`}>
                         Use This Template
                       </Button>
                     </Link>
@@ -209,14 +211,10 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center">
             <Link href="/templates">
-              <Button 
-                size="lg"
-                className="bg-secondary text-secondary-foreground px-8 py-4 text-lg hover:opacity-90 shadow-lg"
-                data-testid="browse-all-templates"
-              >
+              <Button size="lg" variant="secondary" className="px-8 py-4 text-lg shadow-lg" data-testid="browse-all-templates">
                 Browse All Templates
               </Button>
             </Link>
@@ -230,7 +228,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Recent Success Story</h2>
-              <div className="bg-white dark:bg-card rounded-xl p-8 shadow-lg border border-border">
+              <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">Everbloom Care</h3>
                 <p className="text-lg mb-6 text-muted-foreground">
                   After launching their new website with our warm, garden-themed design, Everbloom Care saw immediate results in family engagement.
@@ -248,13 +246,27 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <img 
-                src={everbloomImage} 
-                alt="Everbloom Care website success story" 
-                className="rounded-xl shadow-xl w-full border border-border" 
-              />
+              <img src={everbloomImage} alt="Everbloom Care website success story" className="rounded-2xl shadow-xl w-full border border-border" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Plan My Site teaser */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <span className="section-eyebrow mb-6">
+            <Sparkles className="w-3.5 h-3.5" /> New
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Not sure where to start?</h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Answer a few visual questions about your home and we'll turn your answers into a clear brief — and a ready-to-use AI prompt — for your new website.
+          </p>
+          <Link href="/plan-my-site">
+            <Button size="lg" className="px-8 py-4 text-lg shadow-lg" data-testid="home-plan-my-site-cta">
+              <Sparkles className="w-4 h-4" /> Plan My Site
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -264,12 +276,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl opacity-90 mb-8">Pick a template and we'll tailor it to your home—copy, photos, and colors.</p>
           <Link href="/contact">
-            <Button 
-              size="lg"
-              variant="secondary"
-              className="bg-primary-foreground text-primary px-8 py-4 text-lg hover:opacity-90 shadow-lg"
-              data-testid="final-cta"
-            >
+            <Button size="lg" variant="secondary" className="px-8 py-4 text-lg shadow-lg" data-testid="final-cta">
               Start My Site
             </Button>
           </Link>

@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Heart, TreePine, Leaf, Mountain, ArrowDown } from "lucide-react";
 import afh1Image from "@assets/AFH1_1757374349744.jpg";
 import afh2Image from "@assets/AFH2_1757374349746.jpg";
-import afh4Image from "@assets/AFH4_1757374349759.jpg";
 
 export default function CedarGroveTemplate() {
   return (
@@ -25,13 +24,13 @@ export default function CedarGroveTemplate() {
       {/* Full Screen Hero with Parallax */}
       <section className="min-h-screen relative flex items-center justify-center parallax-hero">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`,
           }}
         ></div>
-        
+
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white story-fade-in">
             Where Stories
@@ -46,10 +45,10 @@ export default function CedarGroveTemplate() {
 
       {/* Story Section 1 - Our Beginning */}
       <section className="min-h-screen flex items-center relative story-section">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1574786527010-ce7b6a5e3e7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1574786527010-ce7b6a5e3e7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`,
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -64,17 +63,17 @@ export default function CedarGroveTemplate() {
                 <span className="block text-green-300">Beginning</span>
               </h2>
               <p className="text-xl leading-relaxed mb-8 text-green-100">
-                In 1987, Martha and James Cedar planted the first tree in what would become our healing garden. 
-                They dreamed of a place where elders could find peace among nature's embrace, where every sunrise 
+                In 1987, Martha and James Cedar planted the first tree in what would become our healing garden.
+                They dreamed of a place where elders could find peace among nature's embrace, where every sunrise
                 brought new hope and every sunset held cherished memories.
               </p>
               <p className="text-lg text-green-200 mb-8">
-                Today, those same trees tower overhead, their branches sheltering three generations of families 
+                Today, those same trees tower overhead, their branches sheltering three generations of families
                 who have called Cedar Grove home.
               </p>
             </div>
             <div className="story-image-float">
-              <img 
+              <img
                 src={afh1Image}
                 alt="Caring moments with residents and therapy animals"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
@@ -89,7 +88,7 @@ export default function CedarGroveTemplate() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="story-image-float order-2 lg:order-1">
-              <img 
+              <img
                 src={afh2Image}
                 alt="Professional caregiver providing personalized attention"
                 className="rounded-3xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-1000"
@@ -105,15 +104,15 @@ export default function CedarGroveTemplate() {
                 <span className="block text-green-300">Naturally</span>
               </h2>
               <p className="text-xl leading-relaxed mb-8 text-green-100">
-                We believe healing happens in cycles, like the seasons. Our approach to care mirrors nature itself - 
+                We believe healing happens in cycles, like the seasons. Our approach to care mirrors nature itself -
                 patient, nurturing, and always focused on growth, even in life's winter chapters.
               </p>
               <div className="space-y-4">
                 {[
                   "Morning walks through our medicinal herb garden",
-                  "Afternoon tea in the greenhouse conservatory", 
+                  "Afternoon tea in the greenhouse conservatory",
                   "Evening stories by the stone fire pit",
-                  "Stargazing from our elevated deck"
+                  "Stargazing from our elevated deck",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center text-green-200 text-lg">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-4"></div>
@@ -147,20 +146,24 @@ export default function CedarGroveTemplate() {
               {
                 title: "Rooted Care",
                 description: "Deep, personalized attention that grows from understanding each resident's unique story and needs.",
-                icon: TreePine
+                icon: TreePine,
               },
               {
-                title: "Seasonal Wellness", 
+                title: "Seasonal Wellness",
                 description: "Activities and care that flow with nature's rhythms, promoting health in body, mind, and spirit.",
-                icon: Leaf
+                icon: Leaf,
               },
               {
                 title: "Generational Love",
                 description: "Creating bonds that span generations, where families become part of our extended Cedar Grove family.",
-                icon: Heart
-              }
+                icon: Heart,
+              },
             ].map((value, index) => (
-              <Card key={index} className="bg-green-800/30 border-green-600 backdrop-blur-sm hover:bg-green-700/40 transition-all duration-500 transform hover:-translate-y-4 philosophy-card" style={{animationDelay: `${index * 200}ms`}}>
+              <Card
+                key={index}
+                className="bg-green-800/30 border-green-600 backdrop-blur-sm hover:bg-green-700/40 transition-all duration-500 transform hover:-translate-y-4 philosophy-card"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
                 <CardContent className="p-8 text-center">
                   <value.icon className="w-16 h-16 text-green-300 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
@@ -174,10 +177,10 @@ export default function CedarGroveTemplate() {
 
       {/* Final Story - Your Chapter */}
       <section className="min-h-screen flex items-center relative story-section">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-40"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200')`,
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -186,10 +189,10 @@ export default function CedarGroveTemplate() {
             <span className="block text-green-300">Continues Here</span>
           </h2>
           <p className="text-2xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed story-fade-in-delayed">
-            Every life is a story worth celebrating. At Cedar Grove Living, we're honored to be part of 
+            Every life is a story worth celebrating. At Cedar Grove Living, we're honored to be part of
             the chapters yet to be written, the memories yet to be made, and the legacy yet to unfold.
           </p>
-          
+
           <div className="bg-green-800/60 backdrop-blur-lg rounded-3xl p-12 max-w-2xl mx-auto border border-green-600">
             <h3 className="text-3xl font-bold mb-8">Begin Your Next Chapter</h3>
             <div className="space-y-6">
@@ -211,93 +214,35 @@ export default function CedarGroveTemplate() {
 
       <style>{`
         @keyframes storyFadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(50px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        
         @keyframes storyTextSlide {
-          from {
-            opacity: 0;
-            transform: translateX(-80px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(-80px); }
+          to { opacity: 1; transform: translateX(0); }
         }
-        
         @keyframes storyImageFloat {
-          from {
-            opacity: 0;
-            transform: translateX(80px) scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-          }
+          from { opacity: 0; transform: translateX(80px) scale(0.9); }
+          to { opacity: 1; transform: translateX(0) scale(1); }
         }
-        
         @keyframes philosophyCard {
-          from {
-            opacity: 0;
-            transform: translateY(60px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
+          from { opacity: 0; transform: translateY(60px) scale(0.95); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
         }
-        
-        .story-fade-in {
-          animation: storyFadeIn 1.5s ease-out;
-        }
-        
-        .story-fade-in-delayed {
-          animation: storyFadeIn 1.5s ease-out 0.5s both;
-        }
-        
-        .story-text-slide {
-          animation: storyTextSlide 1.2s ease-out;
-        }
-        
-        .story-image-float {
-          animation: storyImageFloat 1.2s ease-out 0.3s both;
-        }
-        
-        .philosophy-card {
-          animation: philosophyCard 0.8s ease-out both;
-        }
-        
-        .story-section {
-          background-attachment: fixed;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
+        .story-fade-in { animation: storyFadeIn 1.5s ease-out; }
+        .story-fade-in-delayed { animation: storyFadeIn 1.5s ease-out 0.5s both; }
+        .story-text-slide { animation: storyTextSlide 1.2s ease-out; }
+        .story-image-float { animation: storyImageFloat 1.2s ease-out 0.3s both; }
+        .philosophy-card { animation: philosophyCard 0.8s ease-out both; }
+        .story-section { background-attachment: fixed; }
+        .animate-pulse-slow { animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         @keyframes pulse {
-          0%, 100% {
-            opacity: 0.1;
-          }
-          50% {
-            opacity: 0.3;
-          }
+          0%, 100% { opacity: 0.1; }
+          50% { opacity: 0.3; }
         }
-        
         @media (max-width: 768px) {
-          .parallax-hero {
-            background-attachment: scroll;
-          }
-          .story-section {
-            background-attachment: scroll;
-          }
+          .parallax-hero { background-attachment: scroll; }
+          .story-section { background-attachment: scroll; }
         }
       `}</style>
     </div>

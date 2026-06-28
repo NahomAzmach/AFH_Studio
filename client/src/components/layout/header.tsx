@@ -1,185 +1,117 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "../ui/theme-toggle";
-import { Menu } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+
+const NAV_LINKS = [
+  { href: "/templates", label: "Templates", testId: "nav-templates" },
+  { href: "/features", label: "Features", testId: "nav-features" },
+  { href: "/pricing", label: "Pricing", testId: "nav-pricing" },
+  { href: "/case-studies", label: "Case Studies", testId: "nav-case-studies" },
+  { href: "/about", label: "About", testId: "nav-about" },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   return (
-    <header className="sticky top-0 z-30 w-full border-b border-border bg-background/80 backdrop-blur-sm">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-6xl">
-        <Link href="/" className="text-xl font-bold text-primary" data-testid="logo-link">
+    <header className="sticky top-0 z-30 w-full border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        <Link href="/" className="text-xl font-bold text-primary font-display" data-testid="logo-link">
           AFH Web Studio
         </Link>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link 
-            href="/templates" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            data-testid="nav-templates"
+
+        <nav className="hidden items-center space-x-7 md:flex">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                location === link.href && "text-foreground",
+              )}
+              data-testid={link.testId}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/plan-my-site"
+            className={cn(
+              "flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:opacity-80",
+              location === "/plan-my-site" && "underline",
+            )}
+            data-testid="nav-plan-my-site"
           >
-            Templates
-          </Link>
-          <Link 
-            href="/features" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            data-testid="nav-features"
-          >
-            Features
-          </Link>
-          <Link 
-            href="/pricing" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            data-testid="nav-pricing"
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/case-studies" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            data-testid="nav-case-studies"
-          >
-            Case Studies
-          </Link>
-          <Link 
-            href="/about" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            data-testid="nav-about"
-          >
-            About
+            <Sparkles className="h-4 w-4" />
+            Plan My Site
           </Link>
           <Link href="/contact">
-            <Button className="bg-primary text-primary-foreground font-medium hover:opacity-90" data-testid="header-cta">
-              Start My Site
-            </Button>
+            <Button data-testid="header-cta">Start My Site</Button>
           </Link>
           <ThemeToggle />
         </nav>
 
-        {/* Mobile Navigation Button */}
-        <div className="flex items-center space-x-4 md:hidden">
+        <div className="flex items-center space-x-2 md:hidden">
           <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-muted-foreground hover:text-foreground"
+            aria-label="Toggle menu"
             data-testid="mobile-menu-toggle"
           >
-            <Menu className="w-6 h-6" />
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
       </div>
-      
-      {/* Mobile Menu Trigger */}
+
       {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 z-40 bg-black/50 md:hidden" 
+        <div
+          className="fixed inset-0 z-40 bg-black/50 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
-      
-      {/* Mobile Menu */}
-      <div className={`mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border md:hidden ${
-        mobileMenuOpen ? 'open' : ''
-      }`}>
-        <div className="flex flex-col h-full p-6">
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-xl font-bold text-primary">AFH Web Studio</span>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-muted-foreground hover:text-foreground"
-              data-testid="mobile-menu-close"
-            >
-              ×
+
+      <div
+        className={cn(
+          "mobile-menu fixed inset-y-0 left-0 z-50 w-72 border-r border-border bg-card md:hidden",
+          mobileMenuOpen && "open",
+        )}
+      >
+        <div className="flex h-full flex-col p-6">
+          <div className="mb-8 flex items-center justify-between">
+            <span className="text-xl font-bold text-primary font-display">AFH Web Studio</span>
+            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
+              <X className="h-5 w-5" />
             </Button>
           </div>
           <nav className="flex-1">
-            <ul className="space-y-4">
-              <li>
-                <Link 
-                  href="/" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-home"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/templates" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-templates"
-                >
-                  Templates
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/features" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-features"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/pricing" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-pricing"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/case-studies" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-case-studies"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/about" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contact" 
-                  className="block py-2 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid="mobile-nav-contact"
-                >
-                  Contact
-                </Link>
-              </li>
+            <ul className="space-y-1">
+              {[{ href: "/", label: "Home" }, ...NAV_LINKS, { href: "/plan-my-site", label: "Plan My Site" }, { href: "/contact", label: "Contact" }].map(
+                (link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="block rounded-lg px-3 py-2.5 text-foreground transition-colors hover:bg-muted hover:text-primary"
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid={`mobile-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
-          <div className="mt-8">
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-              <Button className="w-full bg-primary text-primary-foreground font-medium" data-testid="mobile-cta">
-                Start My Site
-              </Button>
-            </Link>
-          </div>
+          <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+            <Button className="w-full" data-testid="mobile-cta">
+              Start My Site
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

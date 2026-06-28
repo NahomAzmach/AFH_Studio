@@ -19,7 +19,7 @@ const contactSchema = z.object({
   city: z.string().optional(),
   website: z.string().url().optional().or(z.literal("")),
   template: z.string().optional(),
-  message: z.string().min(10, "Please provide more details about your home")
+  message: z.string().min(10, "Please provide more details about your home"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -27,37 +27,33 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-    watch
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema)
+    resolver: zodResolver(contactSchema),
   });
-
-  const selectedTemplate = watch("template");
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       toast({
         title: "Thank you for your inquiry!",
         description: "We'll contact you within 24 hours to discuss your website needs.",
       });
-      
+
       console.log("Form submitted:", data);
     } catch (error) {
       toast({
         title: "Error",
         description: "There was a problem submitting your form. Please try again.",
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -73,99 +69,51 @@ export default function Contact() {
             Tell us about your Adult Family Home and we'll get started right away.
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <Card>
             <CardContent className="p-8">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <Label htmlFor="name">Full Name *</Label>
-                  <Input
-                    id="name"
-                    {...register("name")}
-                    placeholder="Your full name"
-                    className={errors.name ? "border-destructive" : ""}
-                    data-testid="input-name"
-                  />
-                  {errors.name && (
-                    <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
-                  )}
+                  <Input id="name" {...register("name")} placeholder="Your full name" className={errors.name ? "border-destructive" : ""} data-testid="input-name" />
+                  {errors.name && <p className="text-sm text-destructive mt-1">{errors.name.message}</p>}
                 </div>
-                
+
                 <div>
                   <Label htmlFor="afhName">Adult Family Home Name *</Label>
-                  <Input
-                    id="afhName"
-                    {...register("afhName")}
-                    placeholder="Your AFH name"
-                    className={errors.afhName ? "border-destructive" : ""}
-                    data-testid="input-afh-name"
-                  />
-                  {errors.afhName && (
-                    <p className="text-sm text-destructive mt-1">{errors.afhName.message}</p>
-                  )}
+                  <Input id="afhName" {...register("afhName")} placeholder="Your AFH name" className={errors.afhName ? "border-destructive" : ""} data-testid="input-afh-name" />
+                  {errors.afhName && <p className="text-sm text-destructive mt-1">{errors.afhName.message}</p>}
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="phone">Phone *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      {...register("phone")}
-                      placeholder="(555) 123-4567"
-                      className={errors.phone ? "border-destructive" : ""}
-                      data-testid="input-phone"
-                    />
-                    {errors.phone && (
-                      <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
-                    )}
+                    <Input id="phone" type="tel" {...register("phone")} placeholder="(555) 123-4567" className={errors.phone ? "border-destructive" : ""} data-testid="input-phone" />
+                    {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>}
                   </div>
                   <div>
                     <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      {...register("email")}
-                      placeholder="your@email.com"
-                      className={errors.email ? "border-destructive" : ""}
-                      data-testid="input-email"
-                    />
-                    {errors.email && (
-                      <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
-                    )}
+                    <Input id="email" type="email" {...register("email")} placeholder="your@email.com" className={errors.email ? "border-destructive" : ""} data-testid="input-email" />
+                    {errors.email && <p className="text-sm text-destructive mt-1">{errors.email.message}</p>}
                   </div>
                 </div>
-                
+
                 <div>
                   <Label htmlFor="city">City</Label>
-                  <Input
-                    id="city"
-                    {...register("city")}
-                    placeholder="Your city"
-                    data-testid="input-city"
-                  />
+                  <Input id="city" {...register("city")} placeholder="Your city" data-testid="input-city" />
                 </div>
-                
+
                 <div>
                   <Label htmlFor="website">Current Website (optional)</Label>
-                  <Input
-                    id="website"
-                    type="url"
-                    {...register("website")}
-                    placeholder="https://yoursite.com"
-                    data-testid="input-website"
-                  />
-                  {errors.website && (
-                    <p className="text-sm text-destructive mt-1">{errors.website.message}</p>
-                  )}
+                  <Input id="website" type="url" {...register("website")} placeholder="https://yoursite.com" data-testid="input-website" />
+                  {errors.website && <p className="text-sm text-destructive mt-1">{errors.website.message}</p>}
                 </div>
-                
+
                 <div>
                   <Label htmlFor="template">Preferred Template</Label>
-                  <Select onValueChange={(value) => setValue("template", value)} data-testid="select-template">
-                    <SelectTrigger>
+                  <Select onValueChange={(value) => setValue("template", value)}>
+                    <SelectTrigger data-testid="select-template">
                       <SelectValue placeholder="Select one..." />
                     </SelectTrigger>
                     <SelectContent>
@@ -177,7 +125,7 @@ export default function Contact() {
                     </SelectContent>
                   </Select>
                 </div>
-                
+
                 <div>
                   <Label htmlFor="message">Tell us about your home *</Label>
                   <Textarea
@@ -188,36 +136,23 @@ export default function Contact() {
                     className={errors.message ? "border-destructive" : ""}
                     data-testid="textarea-message"
                   />
-                  {errors.message && (
-                    <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
-                  )}
+                  {errors.message && <p className="text-sm text-destructive mt-1">{errors.message.message}</p>}
                 </div>
-                
-                <p className="text-sm text-muted-foreground">
-                  We don't collect PHI—please share only general inquiry details.
-                </p>
-                
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground hover:opacity-90 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
-                  data-testid="submit-contact-form"
-                >
+
+                <p className="text-sm text-muted-foreground">We don't collect PHI—please share only general inquiry details.</p>
+
+                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full" data-testid="submit-contact-form">
                   {isSubmitting ? "Sending..." : "Start My Website"}
                 </Button>
               </form>
             </CardContent>
           </Card>
-          
-          {/* Contact Info & Process */}
+
           <div className="space-y-8">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4">Quick Response Guarantee</h3>
-                <p className="text-muted-foreground mb-4">
-                  We respond to all inquiries within 24 hours, usually much sooner.
-                </p>
+                <p className="text-muted-foreground mb-4">We respond to all inquiries within 24 hours, usually much sooner.</p>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-primary" />
@@ -230,7 +165,7 @@ export default function Contact() {
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4">What Happens Next?</h3>
@@ -238,7 +173,7 @@ export default function Contact() {
                   {[
                     "We'll schedule a 15-minute call to discuss your needs and recommend the best template.",
                     "You'll receive a detailed proposal with timeline and next steps.",
-                    "Once approved, we start building your website immediately."
+                    "Once approved, we start building your website immediately.",
                   ].map((step, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xs">
@@ -250,8 +185,8 @@ export default function Contact() {
                 </div>
               </CardContent>
             </Card>
-            
-            <div className="bg-muted rounded-xl p-6">
+
+            <div className="bg-muted rounded-2xl p-6">
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-primary mt-0.5" />
                 <div>

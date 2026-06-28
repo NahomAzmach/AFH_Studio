@@ -4,14 +4,12 @@ export default function Terms() {
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
         <div className="prose prose-lg max-w-none">
-          <p className="text-muted-foreground mb-8">
-            Last updated: {new Date().toLocaleDateString()}
-          </p>
-          
+          <p className="text-muted-foreground mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Services Provided</h2>
             <p className="text-muted-foreground mb-4">
-              AFH Web Studio provides website design, development, hosting, and maintenance services 
+              AFH Web Studio provides website design, development, hosting, and maintenance services
               specifically for Adult Family Homes. Our services include:
             </p>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -34,9 +32,7 @@ export default function Terms() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Cancellation Policy</h2>
-            <p className="text-muted-foreground mb-4">
-              Monthly plans may be cancelled with 30 days written notice. Upon cancellation:
-            </p>
+            <p className="text-muted-foreground mb-4">Monthly plans may be cancelled with 30 days written notice. Upon cancellation:</p>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>Your website will remain live for 30 days after final payment</li>
               <li>You will receive a backup of your website files</li>
@@ -58,7 +54,7 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Intellectual Property</h2>
             <p className="text-muted-foreground">
-              Upon full payment, clients own the rights to their website content and custom design elements. 
+              Upon full payment, clients own the rights to their website content and custom design elements.
               AFH Web Studio retains rights to our proprietary tools, templates, and development methods.
             </p>
           </section>
@@ -66,17 +62,15 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Limitation of Liability</h2>
             <p className="text-muted-foreground">
-              AFH Web Studio's liability is limited to the amount paid for services. We are not responsible 
-              for indirect, incidental, or consequential damages. Websites are provided "as is" without 
+              AFH Web Studio's liability is limited to the amount paid for services. We are not responsible
+              for indirect, incidental, or consequential damages. Websites are provided "as is" without
               warranties beyond those expressly stated.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
-            <p className="text-muted-foreground">
-              For questions about these Terms of Service, contact us at:
-            </p>
+            <p className="text-muted-foreground">For questions about these Terms of Service, contact us at:</p>
             <div className="mt-4 text-muted-foreground">
               <p>Email: hello@afhwebstudio.com</p>
               <p>Phone: (555) 123-4567</p>

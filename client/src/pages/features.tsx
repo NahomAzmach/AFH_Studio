@@ -9,12 +9,9 @@ export default function Features() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Everything You Need</h1>
-          <p className="text-xl text-muted-foreground">
-            Professional features designed specifically for Adult Family Homes
-          </p>
+          <p className="text-xl text-muted-foreground">Professional features designed specifically for Adult Family Homes</p>
         </div>
 
-        {/* Design & Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h2 className="text-3xl font-bold mb-6">Design & Content</h2>
@@ -23,7 +20,7 @@ export default function Features() {
                 "Complete page set: Homepage, Services, Rooms/Amenities, About, Testimonials, Contact",
                 "Professional copywriting tailored to AFH industry",
                 "Mobile-responsive design that works on all devices",
-                "Custom color scheme and branding integration"
+                "Custom color scheme and branding integration",
               ].map((feature, index) => (
                 <li key={index} className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -35,22 +32,13 @@ export default function Features() {
             </ul>
           </div>
           <div>
-            <img 
-              src={afh2Image}
-              alt="Professional caregiver providing personalized attention"
-              className="rounded-xl shadow-xl w-full"
-            />
+            <img src={afh2Image} alt="Professional caregiver providing personalized attention" className="rounded-2xl shadow-xl w-full" />
           </div>
         </div>
 
-        {/* Lead Generation & SEO */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="order-2 lg:order-1">
-            <img 
-              src={afh5Image}
-              alt="Happy community moments and social activities"
-              className="rounded-xl shadow-xl w-full"
-            />
+            <img src={afh5Image} alt="Happy community moments and social activities" className="rounded-2xl shadow-xl w-full" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-bold mb-6">Lead Generation & SEO</h2>
@@ -59,7 +47,7 @@ export default function Features() {
                 "Click-to-call buttons and contact forms",
                 "Tour booking integration",
                 "SEO optimization with proper titles and meta tags",
-                "Google Analytics and tracking setup"
+                "Google Analytics and tracking setup",
               ].map((feature, index) => (
                 <li key={index} className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-accent text-accent-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -72,8 +60,7 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Why AFH-Specific */}
-        <div className="bg-muted rounded-xl p-8">
+        <div className="bg-muted rounded-2xl p-8">
           <h2 className="text-3xl font-bold mb-8 text-center">Why AFH-Specific Matters</h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <Card>
@@ -112,7 +99,6 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Updates & Support */}
         <div className="mt-16 grid md:grid-cols-2 gap-8">
           <Card>
             <CardContent className="p-8">
@@ -123,7 +109,7 @@ export default function Features() {
                   "Security monitoring and backups",
                   "Performance optimization",
                   "24/7 uptime monitoring",
-                  "Email support with quick response"
+                  "Email support with quick response",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -142,7 +128,7 @@ export default function Features() {
                   "Keyboard navigation support",
                   "Screen reader compatibility",
                   "Large, readable fonts",
-                  "Alt text for all images"
+                  "Alt text for all images",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

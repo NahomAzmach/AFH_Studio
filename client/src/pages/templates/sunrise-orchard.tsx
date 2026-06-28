@@ -10,7 +10,6 @@ import afh6Image from "@assets/AFH6_1757374349764.jpg";
 export default function SunriseOrchardTemplate() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50 dark:from-orange-950 dark:via-yellow-950 dark:to-pink-950">
-      {/* Instagram-Style Header */}
       <header className="bg-white/95 dark:bg-orange-900/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-orange-200 dark:border-orange-800">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -19,9 +18,7 @@ export default function SunriseOrchardTemplate() {
                 <Sun className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                  @sunriseorchard
-                </h1>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">@sunriseorchard</h1>
                 <p className="text-sm text-orange-600 dark:text-orange-400">Following • 2.5k posts</p>
               </div>
             </div>
@@ -33,25 +30,19 @@ export default function SunriseOrchardTemplate() {
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Profile Section */}
         <div className="max-w-4xl mx-auto mb-8">
           <Card className="bg-white/90 dark:bg-orange-900/50 backdrop-blur-sm border border-orange-200 dark:border-orange-700 rounded-2xl overflow-hidden">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="relative">
-                  <img 
-                    src={afh5Image}
-                    alt="Happy residents and caregivers at Sunrise Orchard"
-                    className="w-32 h-32 rounded-full border-4 border-gradient-to-r from-orange-400 to-pink-400 shadow-xl object-cover"
-                  />
+                  <img src={afh5Image} alt="Happy residents and caregivers at Sunrise Orchard" className="w-32 h-32 rounded-full border-4 border-gradient-to-r from-orange-400 to-pink-400 shadow-xl object-cover" />
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h2 className="text-3xl font-bold text-orange-800 dark:text-orange-100 mb-2">Sunrise Orchard</h2>
                   <p className="text-orange-600 dark:text-orange-300 mb-4">🌅 Active Living Community • ❤️ Where Every Day Shines</p>
                   <p className="text-stone-700 dark:text-stone-300 mb-4 leading-relaxed">
-                    🎨 Daily activities & adventures ✨ | 📍 Bright Valley, WA | 🏡 Your home away from home | 
-                    ☎️ (555) 456-7890 for tours!
+                    🎨 Daily activities & adventures ✨ | 📍 Bright Valley, WA | 🏡 Your home away from home | ☎️ (555) 456-7890 for tours!
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                     <div className="text-center">
@@ -82,7 +73,6 @@ export default function SunriseOrchardTemplate() {
           </Card>
         </div>
 
-        {/* Story Highlights */}
         <div className="max-w-4xl mx-auto mb-8">
           <div className="flex space-x-4 overflow-x-auto pb-2">
             {[
@@ -91,7 +81,7 @@ export default function SunriseOrchardTemplate() {
               { label: "Music", icon: Music, color: "from-purple-400 to-pink-400" },
               { label: "Garden", icon: Heart, color: "from-green-400 to-blue-400" },
               { label: "Friends", icon: Users, color: "from-blue-400 to-purple-400" },
-              { label: "Coffee", icon: Coffee, color: "from-amber-400 to-orange-400" }
+              { label: "Coffee", icon: Coffee, color: "from-amber-400 to-orange-400" },
             ].map((story, index) => (
               <div key={index} className="flex-shrink-0 text-center cursor-pointer group">
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${story.color} p-1 mb-2 group-hover:scale-110 transition-transform duration-300`}>
@@ -105,16 +95,10 @@ export default function SunriseOrchardTemplate() {
           </div>
         </div>
 
-        {/* Instagram Grid */}
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            {/* Post 1 - Large */}
             <div className="md:col-span-2 md:row-span-2 relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src={afh4Image}
-                alt="Community activities and social time"
-                className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={afh4Image} alt="Community activities and social time" className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <div className="flex items-center space-x-2 mb-2">
@@ -126,13 +110,8 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 2 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src={afh6Image}
-                alt="Residents enjoying social activities"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={afh6Image} alt="Residents enjoying social activities" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-2 left-2 text-white">
                   <div className="flex items-center space-x-1">
@@ -143,13 +122,8 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 3 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src={afh3Image}
-                alt="Personal care and attention"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={afh3Image} alt="Personal care and attention" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-2 left-2 text-white">
                   <div className="flex items-center space-x-1">
@@ -160,13 +134,8 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 4 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src={afh1Image}
-                alt="Therapy animal visits and caring moments"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={afh1Image} alt="Therapy animal visits and caring moments" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-2 left-2 text-white">
                   <div className="flex items-center space-x-1">
@@ -177,13 +146,8 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 5 - Video Style */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1609139003551-ee40f5f73ec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Community dinner"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src="https://images.unsplash.com/photo-1609139003551-ee40f5f73ec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Community dinner" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute top-2 right-2">
                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
                   <div className="w-0 h-0 border-l-[6px] border-l-orange-500 border-y-[3px] border-y-transparent ml-0.5"></div>
@@ -199,13 +163,8 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 6 */}
             <div className="relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Reading corner"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Reading corner" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-2 left-2 text-white">
                   <div className="flex items-center space-x-1">
@@ -216,17 +175,10 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* Post 7 - Multi-photo */}
             <div className="md:col-span-2 relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
-                alt="Holiday celebration"
-                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Holiday celebration" className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute top-2 right-2">
-                <div className="bg-white/80 rounded-full px-2 py-1 text-xs font-bold text-stone-800">
-                  1/4
-                </div>
+                <div className="bg-white/80 rounded-full px-2 py-1 text-xs font-bold text-stone-800">1/4</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-2 left-2 text-white">
@@ -239,21 +191,16 @@ export default function SunriseOrchardTemplate() {
               </div>
             </div>
 
-            {/* More posts in grid pattern... */}
             {[
               "https://images.unsplash.com/photo-1595091629736-f4e24d19df1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
               "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
               "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
               "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
               "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-              "https://images.unsplash.com/photo-1495847785913-60c0b8f4e33f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+              "https://images.unsplash.com/photo-1495847785913-60c0b8f4e33f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
             ].map((img, index) => (
               <div key={index} className="relative group cursor-pointer overflow-hidden rounded-lg">
-                <img 
-                  src={img}
-                  alt={`Community moment ${index + 8}`}
-                  className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <img src={img} alt={`Community moment ${index + 8}`} className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-2 left-2 text-white">
                     <div className="flex items-center space-x-1">
@@ -267,25 +214,17 @@ export default function SunriseOrchardTemplate() {
           </div>
         </div>
 
-        {/* CTA Section as Instagram Story */}
         <div className="max-w-4xl mx-auto mt-12">
           <Card className="bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 text-white rounded-3xl overflow-hidden">
             <CardContent className="p-0">
               <div className="relative h-96 flex items-center justify-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800"
-                  alt="Join our community"
-                  className="absolute inset-0 w-full h-full object-cover opacity-30"
-                />
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800" alt="Join our community" className="absolute inset-0 w-full h-full object-cover opacity-30" />
                 <div className="relative z-10 text-center px-8">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
                     <Smile className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-4xl font-bold mb-4">Ready to Join Our Story?</h3>
-                  <p className="text-xl mb-8 opacity-90">
-                    Every day is an adventure at Sunrise Orchard! 
-                    Schedule your tour and see why our community shines so bright ✨
-                  </p>
+                  <p className="text-xl mb-8 opacity-90">Every day is an adventure at Sunrise Orchard! Schedule your tour and see why our community shines so bright ✨</p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-8 py-4 rounded-full">
                       <Phone className="w-5 h-5 mr-2" />
@@ -307,7 +246,6 @@ export default function SunriseOrchardTemplate() {
         </div>
       </div>
 
-      {/* Footer as Instagram Footer */}
       <footer className="bg-white/90 dark:bg-orange-900/90 backdrop-blur-sm py-8 mt-12 border-t border-orange-200 dark:border-orange-800">
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
@@ -324,7 +262,9 @@ export default function SunriseOrchardTemplate() {
             <p className="text-sm">Licensed AFH #789012 • 🌅 Where every day shines • (555) 456-7890</p>
             <div className="flex justify-center space-x-4 mt-3">
               {["#ActiveLiving", "#CommunityLife", "#SunriseOrchard", "#BrightValley"].map((tag, index) => (
-                <span key={index} className="text-orange-500 dark:text-orange-400 text-xs">{tag}</span>
+                <span key={index} className="text-orange-500 dark:text-orange-400 text-xs">
+                  {tag}
+                </span>
               ))}
             </div>
           </div>

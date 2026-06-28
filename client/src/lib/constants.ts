@@ -1,8 +1,8 @@
-import everbloomThumb from "@assets/afh_everbloom_1757375636779.png";
-import cedarGroveThumb from "@assets/afh_cedarGrove_1757375636778.png";
-import mapleStoneThumb from "@assets/afh_maple&stone_1757375636781.png";
-import sunriseOrchardThumb from "@assets/afh_SunriseOrchard_1757375636782.png";
-import bluebirdHavenThumb from "@assets/afh_bluebird_1757375636774.png";
+import everbloomThumb from "@assets/afh_everbloom_1757375636779.jpg";
+import cedarGroveThumb from "@assets/afh_cedarGrove_1757375636778.jpg";
+import mapleStoneThumb from "@assets/afh_maple_stone_1757375636781.jpg";
+import sunriseOrchardThumb from "@assets/afh_SunriseOrchard_1757375636782.jpg";
+import bluebirdHavenThumb from "@assets/afh_bluebird_1757375636774.jpg";
 
 export const TEMPLATES = [
   {
@@ -11,28 +11,28 @@ export const TEMPLATES = [
     description: "Warm, welcoming design with clear services and tour prompts.",
     image: everbloomThumb,
     previewUrl: "https://everbloomcare.replit.app",
-    featured: true
+    featured: true,
   },
   {
     id: "cedar-grove",
     name: "Cedar Grove Living",
     description: "Immersive storytelling design with parallax scrolling and nature themes.",
     image: cedarGroveThumb,
-    previewUrl: "/templates/cedar-grove"
+    previewUrl: "/templates/cedar-grove",
   },
   {
     id: "maple-stone",
     name: "Maple & Stone",
     description: "Classic newspaper-style layout with professional credibility and trust.",
     image: mapleStoneThumb,
-    previewUrl: "/templates/maple-stone"
+    previewUrl: "/templates/maple-stone",
   },
   {
     id: "sunrise-orchard",
     name: "Sunrise Orchard",
     description: "Instagram-style social layout showcasing community life and activities.",
     image: sunriseOrchardThumb,
-    previewUrl: "/templates/sunrise-orchard"
+    previewUrl: "/templates/sunrise-orchard",
   },
   {
     id: "bluebird-haven",
@@ -40,10 +40,9 @@ export const TEMPLATES = [
     description: "Elegant, sophisticated design with emphasis on luxury care.",
     image: bluebirdHavenThumb,
     previewUrl: "/templates/bluebird-haven",
-    featured: true
-  }
+    featured: true,
+  },
 ];
-
 
 export const PRICING_PLANS = [
   {
@@ -55,10 +54,10 @@ export const PRICING_PLANS = [
       "Template customization",
       "Contact forms & click-to-call",
       "SEO basics setup",
-      "1 month of updates"
+      "1 month of updates",
     ],
     popular: false,
-    ctaText: "Get Started"
+    ctaText: "Get Started",
   },
   {
     name: "Standard",
@@ -70,10 +69,10 @@ export const PRICING_PLANS = [
       "Monthly content updates (2 hours)",
       "Hosting & security monitoring",
       "Analytics & reporting",
-      "Email support"
+      "Email support",
     ],
     popular: true,
-    ctaText: "Start Standard Plan"
+    ctaText: "Start Standard Plan",
   },
   {
     name: "Plus",
@@ -85,9 +84,9 @@ export const PRICING_PLANS = [
       "Extended updates (4 hours/month)",
       "Quarterly photo refresh",
       "Copy tune-ups & optimization",
-      "Priority support (24hr response)"
+      "Priority support (24hr response)",
     ],
     popular: false,
-    ctaText: "Get Plus Plan"
-  }
+    ctaText: "Get Plus Plan",
+  },
 ];

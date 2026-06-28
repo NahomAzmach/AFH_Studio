@@ -1,114 +1,74 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { X, Smartphone, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
-
-interface PreviewModalState {
-  isOpen: boolean;
-  url: string;
-  templateName: string;
-}
 
 export default function PreviewModal() {
-  const [modal, setModal] = useState<PreviewModalState>({
-    isOpen: false,
-    url: "",
-    templateName: ""
-  });
-  const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
+  const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState("");
+  const [templateName, setTemplateName] = useState("");
+  const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
 
-  // Listen for preview events
   useEffect(() => {
-    const handlePreview = (event: CustomEvent) => {
-      const { url, templateName } = event.detail;
-      setModal({ isOpen: true, url, templateName });
-      setViewMode("desktop");
-      document.body.style.overflow = "hidden";
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent<{ url: string; templateName: string }>).detail;
+      setUrl(detail.url);
+      setTemplateName(detail.templateName);
+      setMode("desktop");
+      setOpen(true);
     };
-
-    document.addEventListener("openPreview", handlePreview as EventListener);
-    
-    return () => {
-      document.removeEventListener("openPreview", handlePreview as EventListener);
-    };
+    document.addEventListener("openPreview", handler);
+    return () => document.removeEventListener("openPreview", handler);
   }, []);
 
-  // Handle escape key
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && modal.isOpen) {
-        closeModal();
-      }
-    };
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
 
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [modal.isOpen]);
-
-  const closeModal = () => {
-    setModal({ isOpen: false, url: "", templateName: "" });
-    document.body.style.overflow = "";
-  };
-
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      closeModal();
-    }
-  };
-
-  if (!modal.isOpen) return null;
+  if (!open) return null;
 
   return (
-    <div 
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-      onClick={handleBackdropClick}
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) setOpen(false);
+      }}
       data-testid="preview-modal"
     >
-      <div className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
-        <header className="flex items-center justify-between p-6 border-b border-border">
-          <h2 className="text-xl font-semibold" data-testid="preview-modal-title">
-            {modal.templateName}
-          </h2>
-          <div className="flex items-center space-x-4">
-            <div className="flex bg-muted rounded-lg p-1">
-              <Button
-                variant={viewMode === "desktop" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("desktop")}
-                className={viewMode === "desktop" ? "bg-primary text-primary-foreground" : ""}
-                data-testid="preview-desktop-mode"
-              >
-                Desktop
-              </Button>
-              <Button
-                variant={viewMode === "mobile" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("mobile")}
-                className={viewMode === "mobile" ? "bg-primary text-primary-foreground" : ""}
-                data-testid="preview-mobile-mode"
-              >
-                Mobile
-              </Button>
-            </div>
+      <div className="flex h-[85vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-background shadow-2xl">
+        <header className="flex items-center justify-between border-b border-border px-4 py-3">
+          <h2 className="font-semibold">{templateName} — Live Preview</h2>
+          <div className="flex items-center gap-2">
             <Button
-              variant="ghost"
+              variant={mode === "desktop" ? "default" : "outline"}
               size="icon"
-              onClick={closeModal}
-              className="text-muted-foreground hover:text-foreground"
-              data-testid="preview-modal-close"
+              onClick={() => setMode("desktop")}
+              aria-label="Desktop view"
             >
-              <X className="w-6 h-6" />
+              <Monitor className="h-4 w-4" />
+            </Button>
+            <Button
+              variant={mode === "mobile" ? "default" : "outline"}
+              size="icon"
+              onClick={() => setMode("mobile")}
+              aria-label="Mobile view"
+            >
+              <Smartphone className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Close preview">
+              <X className="h-5 w-5" />
             </Button>
           </div>
         </header>
-        <div className="flex-1 overflow-hidden p-6">
+        <div className="flex-1 overflow-auto bg-muted/40 p-4">
           <iframe
-            src={modal.url}
-            className={`preview-frame border border-border ${
-              viewMode === "mobile" ? "mobile" : ""
-            }`}
             title="Template preview"
+            src={url}
             loading="lazy"
-            data-testid="preview-iframe"
+            className={
+              mode === "mobile"
+                ? "mx-auto h-full w-[390px] rounded-xl border border-border bg-background"
+                : "h-full w-full rounded-xl border border-border bg-background"
+            }
           />
         </div>
       </div>
