@@ -32,7 +32,7 @@ export async function sendPlanRequestEmail(
     html: `
       <div style="font-family:sans-serif;max-width:640px;margin:0 auto;">
         <h2>New "Plan My Site" submission</h2>
-        <p><strong>${request.name}</strong> (${request.email}, ${request.phone}) from <strong>${request.afhName}</strong> in ${request.city} just completed the website planner.</p>
+        <p><strong>${request.name}</strong> (${request.email}, ${request.phone}) from <strong>${request.afhName}</strong> at ${request.address} just completed the website planner.</p>
         <h3>Answers</h3>
         <table style="border-collapse:collapse;width:100%;font-size:14px;">${answersHtml}</table>
         <h3>Generated AI Prompt</h3>

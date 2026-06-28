@@ -86,8 +86,9 @@ export default function Home() {
       </section>
 
       {/* Problems Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-20 bg-background">
+        <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-secondary/10 blur-3xl animate-float" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Common Challenges We Solve</h2>
             <p className="text-xl text-muted-foreground">Many AFH websites fail to convert visitors into tour bookings</p>
@@ -125,8 +126,9 @@ export default function Home() {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-20 bg-muted">
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-accent/10 blur-3xl animate-float" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple, Effective AFH Websites</h2>
@@ -159,8 +161,9 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-20 bg-background">
+        <div className="pointer-events-none absolute right-0 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl animate-pulse-slow" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">Built for AFHs</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -183,8 +186,10 @@ export default function Home() {
       </section>
 
       {/* Live Demos */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-20 bg-muted">
+        <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-secondary/10 blur-3xl animate-float" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl animate-float" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Live Template Demos</h2>
             <p className="text-xl text-muted-foreground">Choose a starting point. We'll tailor the colors, photos, and copy to your home.</p>
@@ -223,8 +228,9 @@ export default function Home() {
       </section>
 
       {/* Case Study */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="relative overflow-hidden py-20 bg-muted">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl animate-pulse-slow" />
+        <div className="container relative mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Recent Success Story</h2>
@@ -253,14 +259,15 @@ export default function Home() {
       </section>
 
       {/* Plan My Site teaser */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
+      <section className="relative overflow-hidden py-20 bg-background">
+        <div className="pointer-events-none absolute -top-10 right-1/3 h-56 w-56 rounded-full bg-secondary/10 blur-3xl animate-float" />
+        <div className="container relative mx-auto px-4 max-w-4xl text-center">
           <span className="section-eyebrow mb-6">
             <Sparkles className="w-3.5 h-3.5" /> New
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Not sure where to start?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Answer a few visual questions about your home and we'll turn your answers into a clear brief — and a ready-to-use AI prompt — for your new website.
+            Answer a few visual questions about your home and we'll turn your answers into a clear brief for your new website.
           </p>
           <Link href="/plan-my-site">
             <Button size="lg" className="px-8 py-4 text-lg shadow-lg" data-testid="home-plan-my-site-cta">
@@ -271,8 +278,10 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
+      <section className="relative overflow-hidden py-16 bg-primary text-primary-foreground">
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-white/10 blur-3xl animate-float" />
+        <div className="pointer-events-none absolute -top-16 right-0 h-64 w-64 rounded-full bg-white/10 blur-3xl animate-pulse-slow" />
+        <div className="container relative mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl opacity-90 mb-8">Pick a template and we'll tailor it to your home—copy, photos, and colors.</p>
           <Link href="/contact">

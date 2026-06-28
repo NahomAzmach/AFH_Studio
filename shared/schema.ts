@@ -9,7 +9,7 @@ export const websitePlanRequests = pgTable("website_plan_requests", {
   email: text("email").notNull(),
   phone: text("phone").notNull(),
   afhName: text("afh_name").notNull(),
-  city: text("city").notNull(),
+  address: text("address").notNull(),
   answers: jsonb("answers").notNull(),
   aiPrompt: text("ai_prompt").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -22,7 +22,7 @@ export const insertWebsitePlanRequestSchema = createInsertSchema(
   email: true,
   phone: true,
   afhName: true,
-  city: true,
+  address: true,
   answers: true,
   aiPrompt: true,
 });

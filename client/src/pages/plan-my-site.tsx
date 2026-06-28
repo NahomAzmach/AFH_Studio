@@ -14,7 +14,7 @@ import {
   Check,
   ArrowLeft,
   ArrowRight,
-  Copy,
+  ExternalLink,
   PartyPopper,
   Home,
   Stethoscope,
@@ -24,12 +24,36 @@ import {
   MessageSquareHeart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import moodMinimal from "@assets/AFH5_1757374349761.jpg";
+import moodVibrant from "@assets/AFH6_1757374349764.jpg";
+import moodTraditional from "@assets/AFH3_1757374349753.jpg";
+import moodNature from "@assets/AFH4_1757374349759.jpg";
 
 const PALETTES = [
   { id: "warm", label: "Warm & Earthy", colors: ["#7c4a2d", "#c98a4b", "#e8c8a0"] },
   { id: "cool", label: "Cool & Calming", colors: ["#2c4a52", "#5b8a91", "#bfe0e0"] },
   { id: "pastel", label: "Soft Pastel", colors: ["#e8b4bc", "#f3d9c4", "#cdeac0"] },
   { id: "bold", label: "Bold & Modern", colors: ["#1f2937", "#e0a526", "#f4f4f5"] },
+  { id: "forest", label: "Forest & Sage", colors: ["#2f3e2e", "#6b8f71", "#cdd9c4"] },
+  { id: "sunset", label: "Sunset & Coral", colors: ["#c1440e", "#f08a4b", "#ffd1a9"] },
+  { id: "monochrome", label: "Monochrome & Minimal", colors: ["#111827", "#6b7280", "#f3f4f6"] },
+  { id: "ocean", label: "Ocean & Teal", colors: ["#0f4c5c", "#1f9c8a", "#bfece6"] },
+];
+
+interface StyleOption {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  previewUrl?: string;
+}
+
+const STYLE_OPTIONS: StyleOption[] = [
+  ...TEMPLATES.map((t) => ({ id: t.id, label: t.name, description: t.description, image: t.image, previewUrl: t.previewUrl })),
+  { id: "minimal", label: "Minimalist & Airy", description: "Clean layouts, lots of breathing room, soft neutral tones.", image: moodMinimal },
+  { id: "vibrant", label: "Vibrant & Playful", description: "Bright colors and energetic photography that feel lively.", image: moodVibrant },
+  { id: "traditional", label: "Traditional & Trustworthy", description: "Classic, professional, and reassuring for families.", image: moodTraditional },
+  { id: "nature", label: "Nature & Calm", description: "Organic shapes, greens, and a peaceful, grounded feel.", image: moodNature },
 ];
 
 const PAGE_OPTIONS = [
@@ -75,7 +99,7 @@ interface Answers {
   email: string;
   phone: string;
   afhName: string;
-  city: string;
+  address: string;
   licenseNumber: string;
   numBeds: string;
   yearEstablished: string;
@@ -102,7 +126,7 @@ const initialAnswers: Answers = {
   email: "",
   phone: "",
   afhName: "",
-  city: "",
+  address: "",
   licenseNumber: "",
   numBeds: "",
   yearEstablished: "",
@@ -128,12 +152,17 @@ function toggleInArray(arr: string[], value: string) {
   return arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value];
 }
 
+function openInNewTab(url: string) {
+  const fullUrl = url.startsWith("/") ? window.location.origin + url : url;
+  window.open(fullUrl, "_blank", "noopener,noreferrer");
+}
+
 function generateAIPrompt(a: Answers) {
   const palette = PALETTES.find((p) => p.id === a.colorPalette)?.label.toLowerCase() || "warm and welcoming";
-  const style = TEMPLATES.find((t) => t.id === a.visualStyle)?.name || "a warm, welcoming design";
+  const style = STYLE_OPTIONS.find((s) => s.id === a.visualStyle)?.label || "a warm, welcoming design";
 
   const lines = [
-    `Design and build a website for "${a.afhName || "[AFH Name]"}", an Adult Family Home in ${a.city || "[City]"}${
+    `Design and build a website for "${a.afhName || "[AFH Name]"}", an Adult Family Home at ${a.address || "[Address]"}${
       a.numBeds ? ` with ${a.numBeds} beds` : ""
     }${a.yearEstablished ? `, established in ${a.yearEstablished}` : ""}.`,
     `Visual direction: aim for a feel similar to "${style}", using a ${palette} color palette.`,
@@ -222,7 +251,7 @@ export default function PlanMySite() {
   const update = <K extends keyof Answers>(key: K, value: Answers[K]) => setAnswers((prev) => ({ ...prev, [key]: value }));
 
   const canGoNext = () => {
-    if (step === 1) return answers.name && answers.email && answers.phone && answers.afhName && answers.city;
+    if (step === 1) return answers.name && answers.email && answers.phone && answers.afhName && answers.address;
     return true;
   };
 
@@ -237,7 +266,7 @@ export default function PlanMySite() {
         email: answers.email,
         phone: answers.phone,
         afhName: answers.afhName,
-        city: answers.city,
+        address: answers.address,
         answers,
         aiPrompt,
       });
@@ -254,34 +283,17 @@ export default function PlanMySite() {
     }
   };
 
-  const copyPrompt = () => {
-    navigator.clipboard.writeText(aiPrompt);
-    toast({ title: "Copied!", description: "The AI prompt is on your clipboard." });
-  };
-
   if (submitted) {
     return (
       <div className="py-20">
-        <div className="container mx-auto max-w-3xl px-4 text-center">
+        <div className="container mx-auto max-w-2xl px-4 text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
             <PartyPopper className="h-8 w-8" />
           </div>
           <h1 className="mb-4 text-4xl font-bold">Thanks, {answers.name.split(" ")[0] || "there"}!</h1>
-          <p className="mb-10 text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground">
             We've got your answers for {answers.afhName || "your home"}. We'll review them and follow up within 24 hours.
           </p>
-
-          <Card className="text-left">
-            <CardContent className="p-6">
-              <div className="mb-3 flex items-center justify-between">
-                <h2 className="font-semibold">Your generated AI prompt</h2>
-                <Button size="sm" variant="outline" onClick={copyPrompt} data-testid="copy-ai-prompt">
-                  <Copy className="h-4 w-4" /> Copy
-                </Button>
-              </div>
-              <Textarea readOnly value={aiPrompt} rows={10} className="font-mono text-xs" />
-            </CardContent>
-          </Card>
         </div>
       </div>
     );
@@ -318,8 +330,7 @@ export default function PlanMySite() {
                       Answer a few visual questions about your Adult Family Home — it takes about 5 minutes.
                     </p>
                     <p className="text-muted-foreground">
-                      Your answers become a clear brief (and a ready-to-use AI prompt) we'll use to design your new
-                      website.
+                      Your answers become a clear brief we'll use to design your new website.
                     </p>
                   </div>
                 )}
@@ -346,17 +357,21 @@ export default function PlanMySite() {
                         <Input id="pms-afh" value={answers.afhName} onChange={(e) => update("afhName", e.target.value)} data-testid="pms-afh-name" />
                       </div>
                     </div>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div>
-                        <Label htmlFor="pms-city">City / State *</Label>
-                        <Input id="pms-city" value={answers.city} onChange={(e) => update("city", e.target.value)} data-testid="pms-city" />
-                      </div>
+                    <div>
+                      <Label htmlFor="pms-address">Full Address *</Label>
+                      <Input
+                        id="pms-address"
+                        value={answers.address}
+                        onChange={(e) => update("address", e.target.value)}
+                        placeholder="Street, City, State, ZIP"
+                        data-testid="pms-address"
+                      />
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-3">
                       <div>
                         <Label htmlFor="pms-license">License # (optional)</Label>
                         <Input id="pms-license" value={answers.licenseNumber} onChange={(e) => update("licenseNumber", e.target.value)} />
                       </div>
-                    </div>
-                    <div className="grid gap-4 md:grid-cols-2">
                       <div>
                         <Label htmlFor="pms-beds">Number of Beds (optional)</Label>
                         <Input id="pms-beds" value={answers.numBeds} onChange={(e) => update("numBeds", e.target.value)} />
@@ -370,49 +385,85 @@ export default function PlanMySite() {
                 )}
 
                 {step === 2 && (
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {TEMPLATES.map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => update("visualStyle", t.id)}
-                        className={cn(
-                          "overflow-hidden rounded-xl border-2 text-left transition-all hover:-translate-y-1 hover:shadow-md",
-                          answers.visualStyle === t.id ? "border-primary" : "border-border",
-                        )}
-                        data-testid={`pms-style-${t.id}`}
-                      >
-                        <img src={t.image} alt={t.name} className="h-32 w-full object-cover" />
-                        <div className="p-3">
-                          <p className="font-semibold">{t.name}</p>
-                          <p className="text-xs text-muted-foreground">{t.description}</p>
-                        </div>
-                      </button>
-                    ))}
+                  <div className="space-y-3">
+                    <p className="text-sm text-muted-foreground">
+                      Pick the style that feels closest to your home, or preview a live example first.
+                    </p>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      {STYLE_OPTIONS.map((s) => {
+                        const selected = answers.visualStyle === s.id;
+                        return (
+                          <div
+                            key={s.id}
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => update("visualStyle", s.id)}
+                            onKeyDown={(e) => e.key === "Enter" && update("visualStyle", s.id)}
+                            className={cn(
+                              "relative cursor-pointer overflow-hidden rounded-xl border-2 text-left transition-all hover:-translate-y-1 hover:shadow-md",
+                              selected ? "border-primary ring-2 ring-primary/30" : "border-border",
+                            )}
+                            data-testid={`pms-style-${s.id}`}
+                          >
+                            {selected && (
+                              <div className="absolute right-2 top-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                                <Check className="h-4 w-4" />
+                              </div>
+                            )}
+                            <img src={s.image} alt={s.label} className="h-32 w-full object-cover" />
+                            <div className="p-3">
+                              <p className="font-semibold">{s.label}</p>
+                              <p className="mb-2 text-xs text-muted-foreground">{s.description}</p>
+                              {s.previewUrl && (
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    openInNewTab(s.previewUrl!);
+                                  }}
+                                  className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                                  data-testid={`pms-style-preview-${s.id}`}
+                                >
+                                  <ExternalLink className="h-3 w-3" /> View live example
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
 
                 {step === 3 && (
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {PALETTES.map((p) => (
-                      <button
-                        key={p.id}
-                        type="button"
-                        onClick={() => update("colorPalette", p.id)}
-                        className={cn(
-                          "rounded-xl border-2 p-5 text-left transition-all hover:-translate-y-1 hover:shadow-md",
-                          answers.colorPalette === p.id ? "border-primary bg-primary/5" : "border-border",
-                        )}
-                        data-testid={`pms-palette-${p.id}`}
-                      >
-                        <div className="mb-3 flex gap-2">
-                          {p.colors.map((c) => (
-                            <span key={c} className="h-8 w-8 rounded-full border border-border" style={{ backgroundColor: c }} />
-                          ))}
-                        </div>
-                        <p className="font-semibold">{p.label}</p>
-                      </button>
-                    ))}
+                    {PALETTES.map((p) => {
+                      const selected = answers.colorPalette === p.id;
+                      return (
+                        <button
+                          key={p.id}
+                          type="button"
+                          onClick={() => update("colorPalette", p.id)}
+                          className={cn(
+                            "relative rounded-xl border-2 p-5 text-left transition-all hover:-translate-y-1 hover:shadow-md",
+                            selected ? "border-primary bg-primary/5 ring-2 ring-primary/30" : "border-border",
+                          )}
+                          data-testid={`pms-palette-${p.id}`}
+                        >
+                          {selected && (
+                            <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                              <Check className="h-4 w-4" />
+                            </div>
+                          )}
+                          <div className="mb-3 flex gap-2">
+                            {p.colors.map((c) => (
+                              <span key={c} className="h-8 w-8 rounded-full border border-border" style={{ backgroundColor: c }} />
+                            ))}
+                          </div>
+                          <p className="font-semibold">{p.label}</p>
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
 
@@ -535,19 +586,13 @@ export default function PlanMySite() {
                   <div className="space-y-6">
                     <div className="rounded-xl bg-muted p-4 text-sm">
                       <p>
-                        <strong>{answers.afhName || "Your AFH"}</strong> in {answers.city || "—"} • Contact: {answers.name || "—"} (
+                        <strong>{answers.afhName || "Your AFH"}</strong> at {answers.address || "—"} • Contact: {answers.name || "—"} (
                         {answers.email || "—"}, {answers.phone || "—"})
                       </p>
                     </div>
-                    <div>
-                      <div className="mb-2 flex items-center justify-between">
-                        <h3 className="font-semibold">Generated AI Prompt</h3>
-                        <Button size="sm" variant="outline" onClick={copyPrompt} data-testid="pms-copy-prompt">
-                          <Copy className="h-4 w-4" /> Copy
-                        </Button>
-                      </div>
-                      <Textarea readOnly value={aiPrompt} rows={12} className="font-mono text-xs" data-testid="pms-ai-prompt" />
-                    </div>
+                    <p className="text-muted-foreground">
+                      That's everything! Submit your answers below and we'll follow up within 24 hours.
+                    </p>
                   </div>
                 )}
               </CardContent>
