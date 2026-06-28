@@ -105,6 +105,8 @@
 
 @layer components {
   .mobile-menu {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
     transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
