@@ -80,7 +80,7 @@ export const HOURLY_RATE = 95;
 export const PRICING_PLANS = [
   {
     name: "Starter",
-    price: "$600",
+    price: "$699",
     period: "One-time build",
     setupFee: null,
     description: "Best for DIYers who just need the initial build.",
