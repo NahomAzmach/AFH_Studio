@@ -1,4 +1,4 @@
-import everbloomThumb from "@assets/afh_everbloom_1757375636779.jpg";
+import everbloomThumb from "@assets/everbloom_live.jpg";
 import cedarGroveThumb from "@assets/afh_cedarGrove_1757375636778.jpg";
 import mapleStoneThumb from "@assets/afh_maple_stone_1757375636781.jpg";
 import sunriseOrchardThumb from "@assets/afh_SunriseOrchard_1757375636782.jpg";
@@ -10,7 +10,7 @@ export const TEMPLATES = [
     name: "Everbloom Care",
     description: "Warm, welcoming design with clear services and tour prompts.",
     image: everbloomThumb,
-    previewUrl: "https://everbloomcare.replit.app",
+    previewUrl: "https://everbloomafh.com",
     featured: true,
   },
   {

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, AlertCircle, Clock, Phone, Sparkles } from "lucide-react";
 import { TEMPLATES } from "@/lib/constants";
 import teamImage from "@assets/Team_1757374829738.jpeg";
-import everbloomImage from "@assets/afh_everbloom_1757375636779.jpg";
+import everbloomImage from "@assets/everbloom_live.jpg";
 
 export default function Home() {
   const openPreview = (url: string, templateName: string) => {
@@ -14,13 +14,8 @@ export default function Home() {
         detail: { url: fullUrl, templateName },
       });
       document.dispatchEvent(event);
-    } else if (url === "https://everbloomcare.replit.app") {
-      const event = new CustomEvent("openPreview", {
-        detail: { url, templateName },
-      });
-      document.dispatchEvent(event);
     } else {
-      alert("This demo will be available soon! Please contact us to see more examples.");
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -252,7 +247,16 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <img src={everbloomImage} alt="Everbloom Care website success story" className="rounded-2xl shadow-xl w-full border border-border" />
+              <a href="https://everbloomafh.com" target="_blank" rel="noopener noreferrer" className="group block" data-testid="everbloom-live-link">
+                <img
+                  src={everbloomImage}
+                  alt="Everbloom Adult Family Home — live website"
+                  className="rounded-2xl shadow-xl w-full border border-border transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+                <p className="mt-3 text-center text-sm font-medium text-primary group-hover:underline">
+                  Visit everbloomafh.com →
+                </p>
+              </a>
             </div>
           </div>
         </div>

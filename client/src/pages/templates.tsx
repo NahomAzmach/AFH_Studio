@@ -11,13 +11,8 @@ export default function Templates() {
         detail: { url: fullUrl, templateName },
       });
       document.dispatchEvent(event);
-    } else if (url === "https://everbloomcare.replit.app") {
-      const event = new CustomEvent("openPreview", {
-        detail: { url, templateName },
-      });
-      document.dispatchEvent(event);
     } else {
-      alert("This demo will be available soon! Please contact us to see more examples.");
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 

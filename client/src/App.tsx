@@ -24,6 +24,10 @@ const CedarGroveTemplate = lazy(() => import("./pages/templates/cedar-grove"));
 const MapleStoneTemplate = lazy(() => import("./pages/templates/maple-stone"));
 const SunriseOrchardTemplate = lazy(() => import("./pages/templates/sunrise-orchard"));
 const BluebirdHavenTemplate = lazy(() => import("./pages/templates/bluebird-haven"));
+const MinimalistAiryTemplate = lazy(() => import("./pages/templates/minimalist-airy"));
+const VibrantPlayfulTemplate = lazy(() => import("./pages/templates/vibrant-playful"));
+const TraditionalTrustworthyTemplate = lazy(() => import("./pages/templates/traditional-trustworthy"));
+const NatureCalmTemplate = lazy(() => import("./pages/templates/nature-calm"));
 
 function Router() {
   return (
@@ -38,6 +42,10 @@ function Router() {
             <Route path="/templates/maple-stone" component={MapleStoneTemplate} />
             <Route path="/templates/sunrise-orchard" component={SunriseOrchardTemplate} />
             <Route path="/templates/bluebird-haven" component={BluebirdHavenTemplate} />
+            <Route path="/templates/minimalist-airy" component={MinimalistAiryTemplate} />
+            <Route path="/templates/vibrant-playful" component={VibrantPlayfulTemplate} />
+            <Route path="/templates/traditional-trustworthy" component={TraditionalTrustworthyTemplate} />
+            <Route path="/templates/nature-calm" component={NatureCalmTemplate} />
             <Route path="/features" component={Features} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/case-studies" component={CaseStudies} />

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f4f6ee"/>
+  <rect x="0" y="0" width="400" height="42" fill="#f4f6ee"/>
+  <circle cx="32" cy="21" r="13" fill="#5c7a52"/>
+  <text x="52" y="26" font-family="Arial, sans-serif" font-weight="600" font-size="15" fill="#3f4f3a">Sage Meadow</text>
+  <rect x="320" y="11" width="62" height="20" rx="10" fill="#5c7a52"/>
+  <line x1="0" y1="42" x2="400" y2="42" stroke="#dde4cf" stroke-width="1"/>
+  <text x="100" y="100" font-family="Arial, sans-serif" font-weight="600" font-size="22" fill="#3f4f3a" text-anchor="middle">Care that grows</text>
+  <text x="100" y="126" font-family="Arial, sans-serif" font-weight="600" font-size="22" fill="#3f4f3a" text-anchor="middle">from the ground up.</text>
+  <ellipse cx="290" cy="170" rx="92" ry="78" fill="#dde4cf"/>
+  <ellipse cx="290" cy="170" rx="74" ry="62" fill="#a9c094"/>
+  <rect x="40" y="210" width="120" height="6" rx="3" fill="#5a6655"/>
+  <rect x="40" y="224" width="100" height="6" rx="3" fill="#5a6655"/>
+  <rect x="40" y="245" width="90" height="20" rx="10" fill="#5c7a52"/>
+</svg>

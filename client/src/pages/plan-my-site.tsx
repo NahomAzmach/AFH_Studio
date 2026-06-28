@@ -24,10 +24,10 @@ import {
   MessageSquareHeart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import moodMinimal from "@assets/AFH5_1757374349761.jpg";
-import moodVibrant from "@assets/AFH6_1757374349764.jpg";
-import moodTraditional from "@assets/AFH3_1757374349753.jpg";
-import moodNature from "@assets/AFH4_1757374349759.jpg";
+import moodMinimal from "@assets/mood-minimalist-airy.svg";
+import moodVibrant from "@assets/mood-vibrant-playful.svg";
+import moodTraditional from "@assets/mood-traditional-trustworthy.svg";
+import moodNature from "@assets/mood-nature-calm.svg";
 
 const PALETTES = [
   { id: "warm", label: "Warm & Earthy", colors: ["#7c4a2d", "#c98a4b", "#e8c8a0"] },
@@ -50,10 +50,10 @@ interface StyleOption {
 
 const STYLE_OPTIONS: StyleOption[] = [
   ...TEMPLATES.map((t) => ({ id: t.id, label: t.name, description: t.description, image: t.image, previewUrl: t.previewUrl })),
-  { id: "minimal", label: "Minimalist & Airy", description: "Clean layouts, lots of breathing room, soft neutral tones.", image: moodMinimal },
-  { id: "vibrant", label: "Vibrant & Playful", description: "Bright colors and energetic photography that feel lively.", image: moodVibrant },
-  { id: "traditional", label: "Traditional & Trustworthy", description: "Classic, professional, and reassuring for families.", image: moodTraditional },
-  { id: "nature", label: "Nature & Calm", description: "Organic shapes, greens, and a peaceful, grounded feel.", image: moodNature },
+  { id: "minimal", label: "Minimalist & Airy", description: "Clean layouts, lots of breathing room, soft neutral tones.", image: moodMinimal, previewUrl: "/templates/minimalist-airy" },
+  { id: "vibrant", label: "Vibrant & Playful", description: "Bright colors and energetic photography that feel lively.", image: moodVibrant, previewUrl: "/templates/vibrant-playful" },
+  { id: "traditional", label: "Traditional & Trustworthy", description: "Classic, professional, and reassuring for families.", image: moodTraditional, previewUrl: "/templates/traditional-trustworthy" },
+  { id: "nature", label: "Nature & Calm", description: "Organic shapes, greens, and a peaceful, grounded feel.", image: moodNature, previewUrl: "/templates/nature-calm" },
 ];
 
 const PAGE_OPTIONS = [

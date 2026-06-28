@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#fbfaf8"/>
+  <rect x="0" y="0" width="400" height="36" fill="#ffffff"/>
+  <line x1="0" y1="36" x2="400" y2="36" stroke="#e7e3dc" stroke-width="1"/>
+  <text x="24" y="23" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#2a2a28">WILLOW COURT</text>
+  <rect x="320" y="14" width="56" height="10" rx="5" fill="#e7e3dc"/>
+  <rect x="120" y="70" width="160" height="10" rx="2" fill="#2a2a28"/>
+  <rect x="100" y="86" width="200" height="10" rx="2" fill="#2a2a28"/>
+  <rect x="140" y="112" width="120" height="5" rx="2" fill="#b8b4ab"/>
+  <rect x="155" y="124" width="90" height="5" rx="2" fill="#b8b4ab"/>
+  <rect x="60" y="160" width="280" height="110" rx="2" fill="#ded9cd"/>
+  <circle cx="170" cy="205" r="22" fill="#cfc9bb"/>
+  <circle cx="240" cy="210" r="26" fill="#c3bdae"/>
+</svg>

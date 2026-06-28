@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7e6"/>
+      <stop offset="50%" stop-color="#ffe8d6"/>
+      <stop offset="100%" stop-color="#ffe1ef"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="400" height="40" fill="#ffffff"/>
+  <circle cx="34" cy="20" r="12" fill="url(#sunGrad)"/>
+  <text x="54" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#ea580c">Sunbeam Cottage</text>
+  <rect x="320" y="10" width="60" height="20" rx="10" fill="url(#sunGrad)"/>
+  <text x="115" y="100" font-family="Arial, sans-serif" font-weight="800" font-size="26" fill="#ea580c" text-anchor="middle">Care full of</text>
+  <text x="200" y="130" font-family="Arial, sans-serif" font-weight="800" font-size="26" fill="#ec4899" text-anchor="middle">color &amp; life!</text>
+  <rect x="40" y="170" width="155" height="100" rx="24" fill="#fb923c" opacity="0.85"/>
+  <rect x="205" y="170" width="155" height="100" rx="24" fill="#2dd4bf" opacity="0.85"/>
+  <circle cx="117" cy="220" r="20" fill="#ffffff" opacity="0.5"/>
+  <circle cx="282" cy="220" r="20" fill="#ffffff" opacity="0.5"/>
+</svg>

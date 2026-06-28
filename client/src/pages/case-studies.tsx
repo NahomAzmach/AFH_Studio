@@ -1,13 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, X, TrendingUp } from "lucide-react";
+import everbloomImage from "@assets/everbloom_live.jpg";
 
 export default function CaseStudies() {
-  const openPreview = (url: string, templateName: string) => {
-    const event = new CustomEvent("openPreview", { detail: { url, templateName } });
-    document.dispatchEvent(event);
-  };
-
   return (
     <div className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -45,16 +41,18 @@ export default function CaseStudies() {
                 </div>
               </div>
 
-              <Button onClick={() => openPreview("https://everbloomcare.replit.app", "Everbloom Care Live Site")} data-testid="everbloom-preview">
-                View Live Site
-              </Button>
+              <a href="https://everbloomafh.com" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="everbloom-preview">View Live Site</Button>
+              </a>
             </div>
             <div>
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                alt="Everbloom Care website preview"
-                className="rounded-xl shadow-lg w-full"
-              />
+              <a href="https://everbloomafh.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={everbloomImage}
+                  alt="Everbloom Adult Family Home — live website"
+                  className="rounded-xl shadow-lg w-full transition-transform duration-300 hover:scale-[1.02]"
+                />
+              </a>
             </div>
           </div>
         </Card>
