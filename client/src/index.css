@@ -41,48 +41,50 @@
 
 :root {
   /* Warm, editorial palette: deep forest primary, terracotta secondary, soft cream surfaces */
-  --background: hsl(36, 33%, 97%);
-  --foreground: hsl(150, 15%, 14%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(150, 15%, 14%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(150, 15%, 14%);
-  --primary: hsl(155, 45%, 22%);
-  --primary-foreground: hsl(40, 30%, 97%);
-  --secondary: hsl(22, 70%, 54%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(36, 25%, 93%);
-  --muted-foreground: hsl(150, 10%, 40%);
-  --accent: hsl(174, 45%, 38%);
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 72%, 51%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(36, 20%, 88%);
-  --input: hsl(36, 20%, 88%);
-  --ring: hsl(155, 45%, 22%);
+  --background: 36 33% 97%;
+  --foreground: 150 15% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 150 15% 14%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 150 15% 14%;
+  --primary: 155 45% 22%;
+  --primary-foreground: 40 30% 97%;
+  --secondary: 22 70% 54%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 36 25% 93%;
+  --muted-foreground: 150 10% 40%;
+  --accent: 174 45% 38%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 36 20% 88%;
+  --input: 36 20% 88%;
+  --ring: 155 45% 22%;
   --radius: 1rem;
+  color-scheme: light;
 }
 
 .dark {
-  --background: hsl(155, 22%, 8%);
-  --foreground: hsl(40, 25%, 94%);
-  --card: hsl(155, 18%, 11%);
-  --card-foreground: hsl(40, 25%, 94%);
-  --popover: hsl(155, 18%, 11%);
-  --popover-foreground: hsl(40, 25%, 94%);
-  --primary: hsl(150, 40%, 48%);
-  --primary-foreground: hsl(155, 22%, 8%);
-  --secondary: hsl(22, 75%, 58%);
-  --secondary-foreground: hsl(155, 22%, 8%);
-  --muted: hsl(155, 16%, 16%);
-  --muted-foreground: hsl(40, 12%, 68%);
-  --accent: hsl(174, 50%, 52%);
-  --accent-foreground: hsl(155, 22%, 8%);
-  --destructive: hsl(0, 70%, 55%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(155, 16%, 19%);
-  --input: hsl(155, 16%, 19%);
-  --ring: hsl(150, 40%, 48%);
+  --background: 155 22% 8%;
+  --foreground: 40 25% 94%;
+  --card: 155 18% 11%;
+  --card-foreground: 40 25% 94%;
+  --popover: 155 18% 11%;
+  --popover-foreground: 40 25% 94%;
+  --primary: 150 40% 48%;
+  --primary-foreground: 155 22% 8%;
+  --secondary: 22 75% 58%;
+  --secondary-foreground: 155 22% 8%;
+  --muted: 155 16% 16%;
+  --muted-foreground: 40 12% 72%;
+  --accent: 174 50% 52%;
+  --accent-foreground: 155 22% 8%;
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 155 16% 19%;
+  --input: 155 16% 19%;
+  --ring: 150 40% 48%;
+  color-scheme: dark;
 }
 
 @layer base {

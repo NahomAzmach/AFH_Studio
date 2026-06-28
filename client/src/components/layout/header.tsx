@@ -78,7 +78,7 @@ export default function Header() {
 
       <div
         className={cn(
-          "mobile-menu fixed inset-y-0 left-0 z-50 w-72 border-r border-border bg-card md:hidden",
+          "mobile-menu fixed inset-y-0 left-0 z-50 w-72 border-r border-border bg-card text-card-foreground shadow-2xl md:hidden",
           mobileMenuOpen && "open",
         )}
       >

@@ -6,8 +6,8 @@ import afh6Image from "@assets/AFH6_1757374349764.jpg";
 
 export default function VibrantPlayfulTemplate() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50">
-      <header className="sticky top-0 z-10 border-b-4 border-orange-300 bg-white/90 backdrop-blur-sm">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50 dark:from-stone-950 dark:via-orange-950 dark:to-pink-950">
+      <header className="sticky top-0 z-10 border-b-4 border-orange-300 bg-white/90 backdrop-blur-sm dark:border-orange-800 dark:bg-stone-950/95">
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
           <div className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-orange-400">
@@ -29,14 +29,14 @@ export default function VibrantPlayfulTemplate() {
           Care that's full of <span className="text-pink-500">color</span> and{" "}
           <span className="text-teal-500">life</span>!
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-xl text-stone-600">
+        <p className="mx-auto mt-6 max-w-xl text-xl text-stone-600 dark:text-stone-200">
           Sunbeam Cottage is all about music, laughter, and good company — care that feels like a celebration, not a routine.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button size="lg" className="rounded-full bg-pink-500 hover:bg-pink-600">
             <Smile className="h-4 w-4" /> Book a Tour
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full border-2 border-teal-400 text-teal-600 hover:bg-teal-50">
+          <Button size="lg" variant="outline" className="rounded-full border-2 border-teal-400 text-teal-600 hover:bg-teal-50 dark:text-teal-200 dark:hover:bg-teal-950">
             See Our Activities
           </Button>
         </div>
@@ -57,13 +57,13 @@ export default function VibrantPlayfulTemplate() {
             { icon: Palette, title: "Arts & Crafts", color: "from-teal-400 to-teal-500", desc: "A rotating gallery of resident artwork brightens every hallway." },
             { icon: Heart, title: "Big Hearts, Bigger Hugs", color: "from-orange-400 to-orange-500", desc: "Our caregivers genuinely love what they do, and it shows." },
           ].map((item) => (
-            <Card key={item.title} className="rounded-3xl border-0 shadow-md transition-transform hover:-translate-y-2">
+            <Card key={item.title} className="rounded-3xl border-0 shadow-md transition-transform hover:-translate-y-2 dark:bg-stone-900">
               <CardContent className="p-8 text-center">
                 <div className={`mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${item.color}`}>
                   <item.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-stone-800">{item.title}</h3>
-                <p className="text-stone-600">{item.desc}</p>
+                <h3 className="mb-2 text-xl font-bold text-stone-800 dark:text-stone-100">{item.title}</h3>
+                <p className="text-stone-600 dark:text-stone-300">{item.desc}</p>
               </CardContent>
             </Card>
           ))}

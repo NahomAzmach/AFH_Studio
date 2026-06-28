@@ -5,14 +5,14 @@ import afh7Image from "@assets/AFH7_1757374349769.avif";
 
 export default function NatureCalmTemplate() {
   return (
-    <div className="min-h-screen bg-[#f4f6ee] text-[#2f3b2e]">
-      <header className="border-b border-[#dde4cf] bg-[#f4f6ee]/90 backdrop-blur-sm">
+    <div className="min-h-screen bg-[#f4f6ee] text-[#2f3b2e] dark:bg-emerald-950 dark:text-emerald-50">
+      <header className="border-b border-[#dde4cf] bg-[#f4f6ee]/90 backdrop-blur-sm dark:border-emerald-900 dark:bg-emerald-950/95">
         <div className="container mx-auto flex items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#5c7a52]">
               <Leaf className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-semibold text-[#3f4f3a]">Sage Meadow</span>
+            <span className="text-xl font-semibold text-[#3f4f3a] dark:text-emerald-50">Sage Meadow</span>
           </div>
           <Button className="rounded-full bg-[#5c7a52] hover:bg-[#4d6845]">
             <Phone className="h-4 w-4" /> (555) 345-9080
@@ -22,25 +22,25 @@ export default function NatureCalmTemplate() {
 
       <section className="container mx-auto grid items-center gap-12 px-6 py-20 md:grid-cols-2">
         <div>
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#e3ead6] px-4 py-1.5 text-sm font-medium text-[#4d6845]">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#e3ead6] px-4 py-1.5 text-sm font-medium text-[#4d6845] dark:bg-emerald-900 dark:text-emerald-100">
             <Sprout className="h-4 w-4" /> Rooted in calm, grounded care
           </span>
-          <h1 className="mb-6 text-5xl font-semibold leading-tight text-[#3f4f3a]">
+          <h1 className="mb-6 text-5xl font-semibold leading-tight text-[#3f4f3a] dark:text-emerald-50">
             Care that grows from the ground up.
           </h1>
-          <p className="mb-8 text-lg text-[#5a6655]">
+          <p className="mb-8 text-lg text-[#5a6655] dark:text-emerald-100">
             Sage Meadow blends gentle daily routines with time outdoors — a peaceful place where residents feel
             grounded, not rushed.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="rounded-full bg-[#5c7a52] hover:bg-[#4d6845]">Plan a Visit</Button>
-            <Button size="lg" variant="outline" className="rounded-full border-2 border-[#5c7a52] text-[#4d6845]">
+            <Button size="lg" variant="outline" className="rounded-full border-2 border-[#5c7a52] text-[#4d6845] dark:border-emerald-500 dark:text-emerald-100">
               Our Gardens
             </Button>
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -inset-4 rounded-[55%_45%_60%_40%/50%_60%_40%_50%] bg-[#dde4cf]" />
+          <div className="absolute -inset-4 rounded-[55%_45%_60%_40%/50%_60%_40%_50%] bg-[#dde4cf] dark:bg-emerald-900" />
           <img
             src={afh5Image}
             alt="Residents enjoying a peaceful afternoon together"
@@ -49,9 +49,9 @@ export default function NatureCalmTemplate() {
         </div>
       </section>
 
-      <section className="bg-[#eaf0de] py-20">
+      <section className="bg-[#eaf0de] py-20 dark:bg-emerald-900">
         <div className="container mx-auto px-6">
-          <h2 className="mb-12 text-center text-3xl font-semibold text-[#3f4f3a]">A gentler rhythm to each day</h2>
+          <h2 className="mb-12 text-center text-3xl font-semibold text-[#3f4f3a] dark:text-emerald-50">A gentler rhythm to each day</h2>
           <div className="grid gap-10 md:grid-cols-3">
             {[
               { icon: Leaf, title: "Garden Walks", body: "Shaded paths and raised garden beds for fresh air every day." },
@@ -62,8 +62,8 @@ export default function NatureCalmTemplate() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#5c7a52]/10">
                   <item.icon className="h-7 w-7 text-[#5c7a52]" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-[#3f4f3a]">{item.title}</h3>
-                <p className="text-[#5a6655]">{item.body}</p>
+                <h3 className="mb-2 text-xl font-semibold text-[#3f4f3a] dark:text-emerald-50">{item.title}</h3>
+                <p className="text-[#5a6655] dark:text-emerald-100">{item.body}</p>
               </div>
             ))}
           </div>
@@ -72,16 +72,16 @@ export default function NatureCalmTemplate() {
 
       <section className="container mx-auto grid items-center gap-12 px-6 py-20 md:grid-cols-2">
         <div className="relative order-2 md:order-1">
-          <div className="absolute -inset-4 rounded-[40%_60%_45%_55%/55%_45%_60%_40%] bg-[#e3ead6]" />
+          <div className="absolute -inset-4 rounded-[40%_60%_45%_55%/55%_45%_60%_40%] bg-[#e3ead6] dark:bg-emerald-900" />
           <img
             src={afh7Image}
             alt="A calming moment in the garden"
             className="relative h-80 w-full rounded-[40%_60%_45%_55%/55%_45%_60%_40%] object-cover shadow-lg"
           />
         </div>
-        <blockquote className="order-1 text-2xl font-medium leading-relaxed text-[#3f4f3a] md:order-2">
+        <blockquote className="order-1 text-2xl font-medium leading-relaxed text-[#3f4f3a] md:order-2 dark:text-emerald-50">
           “Dad spends every morning in the garden now. He's calmer than he's been in years.”
-          <footer className="mt-4 text-sm font-normal text-[#7c8a76]">— A Sage Meadow family member</footer>
+          <footer className="mt-4 text-sm font-normal text-[#7c8a76] dark:text-emerald-200">— A Sage Meadow family member</footer>
         </blockquote>
       </section>
 
